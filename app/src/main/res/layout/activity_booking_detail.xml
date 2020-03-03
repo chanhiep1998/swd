@@ -1,0 +1,493 @@
+
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            >
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll|enterAlwaysCollapsed">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        app:popupTheme="@style/AppTheme"
+                        app:layout_collapseMode="pin"
+                        />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="THÔNG TIN ĐẶT CHỖ"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                            android:textColor="#e62e00"
+                            android:textStyle="bold"
+                            app:fontFamily="@font/montserrat" />
+                    </RelativeLayout>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#f2f2f2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#f2f2f2">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="270dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="165dp"
+                        android:layout_marginLeft="165dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginEnd="165dp"
+                        android:layout_marginRight="165dp"
+                        android:gravity="center"
+                        android:text="Nha Khoa Lan An: Giấc trưa vui khám răng: miễn phí khám và tư vấn"
+                        android:textStyle="bold"
+                        app:fontFamily="@font/montserrat"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="168dp"
+                        android:layout_marginLeft="168dp"
+                        android:layout_marginTop="96dp"
+                        android:text="Mã đặt chỗ"
+                        app:fontFamily="@font/montserrat"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="148dp"
+                        android:drawableEnd="@drawable/copy"
+                        android:drawablePadding="3dp"
+                        android:text="JJ68556532"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:textSize="16dp"
+                        app:fontFamily="@font/montserrat"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="28dp"
+                        android:layout_marginLeft="28dp"
+                        android:layout_marginTop="232dp"
+                        android:text="CHI TIẾT CUỘC HẸN"
+                        android:textStyle="bold"
+                        app:fontFamily="@font/montserrat"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="86dp"
+                        android:layout_height="64dp"
+                        android:layout_marginStart="160dp"
+                        android:layout_marginLeft="160dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="165dp"
+                        android:layout_marginRight="165dp"
+                        android:layout_marginBottom="12dp"
+                        app:layout_constraintBottom_toTopOf="@+id/textView6"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView5"
+                        app:srcCompat="@drawable/qrcode" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    app:cardCornerRadius="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_margin="10dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="16dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:id="@+id/textView13"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Thời gian đến"
+                                app:fontFamily="@font/montserrat"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/textView12"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:text="Thứ ba 25/02/2020"
+                                app:fontFamily="@font/montserrat"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/textView11"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="3dp"
+                                android:layout_marginRight="3dp"
+                                android:text="02:15 PM"
+                                android:textColor="#e62e00"
+                                app:fontFamily="@font/montserrat"
+                                app:layout_constraintEnd_toStartOf="@+id/textView12"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                        <View
+                            android:id="@+id/view"
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dp"
+                            android:background="#f6f6f6"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+                        <TextView
+                            android:id="@+id/textView14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="13dp"
+                            android:text="Dịch vụ"
+                            app:fontFamily="@font/montserrat"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/view" />
+
+                        <TextView
+                            android:id="@+id/textView15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginEnd="32dp"
+                            android:layout_marginRight="32dp"
+                            android:text="Trám răng"
+                            app:fontFamily="@font/montserrat"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/view" />
+
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="309dp"
+                            android:layout_height="105dp"
+                            android:layout_marginTop="40dp"
+                            android:scaleType="fitXY"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.436"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/view"
+                            app:srcCompat="@drawable/map" />
+
+                        <TextView
+                            android:id="@+id/textView16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="17dp"
+                            android:text="03-07 Trần Quốc Toản, phường 8, Quận 3, TPHCM"
+                            app:fontFamily="@font/montserrat"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+                        <Button
+                            android:id="@+id/button2"
+                            android:layout_width="160dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="8dp"
+                            android:drawableLeft="@drawable/send"
+                            android:paddingLeft="25dp"
+                            android:paddingRight="15dp"
+                            android:text="Chỉ đường"
+                            android:textColor="#e62e00"
+                            android:textSize="13dp"
+                            app:backgroundTint="#f2f2f2"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                        <Button
+                            android:id="@+id/button"
+                            android:layout_width="160dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginBottom="8dp"
+                            android:drawableLeft="@android:drawable/stat_sys_phone_call"
+                            android:drawableTint="#EC927C"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="3dp"
+                            android:text="Gọi phòng khám"
+                            android:textColor="#e62e00"
+                            android:textSize="13dp"
+                            app:backgroundTint="#f2f2f2"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/button2"
+                            app:layout_constraintHorizontal_bias="0.516"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="380dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingLeft="25dp"
+                    android:paddingRight="15dp"
+                    android:text="ĐÃ HỦY"
+                    android:textColor="#ffffff"
+                    android:textSize="13dp"
+                    app:backgroundTint="#d9d9d9" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="3dp">
+
+                    <TextView
+                        android:id="@+id/textView17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:text="Thông tin người khám"
+                        android:textStyle="bold"
+                        app:fontFamily="@font/montserrat"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_margin="10dp"
+                    app:cardCornerRadius="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="25dp"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="5dp"
+                                android:text="Ưu đãi"
+                                app:fontFamily="@font/montserrat"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="36dp"
+                                android:layout_marginRight="36dp"
+                                android:text="-50%"
+                                android:textColor="#e62e00"
+                                app:fontFamily="@font/montserrat"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <View
+                                android:layout_width="fill_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="9dp"
+                                android:background="#f6f6f6"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="25dp"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="5dp"
+                                android:text="Khách đặt"
+                                app:fontFamily="@font/montserrat"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="36dp"
+                                android:layout_marginRight="36dp"
+                                android:text="JJ410535"
+                                android:textStyle="bold"
+                                app:fontFamily="@font/montserrat"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <View
+                                android:layout_width="fill_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="9dp"
+                                android:background="#f6f6f6"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="25dp"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="5dp"
+                                android:text="Điện thoại liên hệ"
+                                app:fontFamily="@font/montserrat"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="36dp"
+                                android:layout_marginRight="36dp"
+                                android:text="0903915984"
+                                android:textStyle="bold"
+                                app:fontFamily="@font/montserrat"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <View
+                                android:layout_width="fill_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="9dp"
+                                android:background="#f6f6f6"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="25dp"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="5dp"
+                                android:text="Email"
+                                app:fontFamily="@font/montserrat"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="36dp"
+                                android:layout_marginRight="36dp"
+                                android:text="langtuvippro_1234@gmail.com"
+                                android:textStyle="bold"
+                                app:fontFamily="@font/montserrat"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <View
+                                android:layout_width="fill_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="9dp"
+                                android:background="#f6f6f6"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+</LinearLayout>

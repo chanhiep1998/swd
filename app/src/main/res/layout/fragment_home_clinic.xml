@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="200dp"
+    android:layout_height="300dp"
+    android:padding="10dp"
+    android:background="#FFFFFF"
+    >
+
+    <ImageView
+        android:id="@+id/itemImage"
+        android:layout_width="180dp"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/dental01" />
+
+    <TextView
+        android:layout_marginVertical="5dp"
+        android:id="@+id/itemNameTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryDark"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        /><TextView
+        android:layout_marginVertical="5dp"
+        android:id="@+id/itemPriceTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryDark"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        />
+    <TextView
+        android:id="@+id/itemDescriptionTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:text="Ditsy Chuck On Chiffon Midi Dress"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        />
+</LinearLayout>
