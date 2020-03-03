@@ -1,0 +1,78 @@
+<resources>
+    <string name="app_name">Dental</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="usingPolicy">
+    Extremely dangerous challenges: Challenges that pose an imminent risk of physical injury.
+Dangerous or threatening pranks: Pranks that lead victims to fear imminent serious physical danger, or that create serious emotional distress in minors.
+Instructions to kill or harm: Showing viewers how to perform activities meant to kill or maim others. For example, giving instructions to build a bomb meant to injure or kill others.
+
+    </string>
+
+    <string-array name="programming_languages">
+        <item>Đặt chỗ thành công</item>
+        <item>Đặt chỗ thành công</item>
+        <item>Đặt chỗ thành công</item>
+        <item>Đặt chỗ thành công</item>
+        <item>Đặt chỗ thành công</item>
+        <item>Đặt chỗ thành công</item>
+        <item>Đặt chỗ thành công</item>
+        <item>Đặt chỗ thành công</item>
+        <item>Đặt chỗ thành công</item>
+        <item>Đặt chỗ thành công</item>
+        <item>Đặt chỗ thành công</item>
+        <item>Đặt chỗ thành công</item>
+        <item>Đặt chỗ thành công</item>
+        <item>Đặt chỗ thành công</item>
+        <item>Đặt chỗ thành công</item>
+        <item>Đặt chỗ thành công</item>
+        <item>Đặt chỗ thành công</item>
+        <item>Đặt chỗ thành công</item>
+        <item>Đặt chỗ thành công</item>
+        <item>Đặt chỗ thành công</item>
+    </string-array>
+
+    <string-array name="description">
+        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
+            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
+        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
+            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
+        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
+            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
+        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
+            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
+        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
+            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
+        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
+            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
+        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
+            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
+        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
+            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
+        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
+            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
+        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
+            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
+        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
+            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
+        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
+            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
+        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
+            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
+        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
+            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
+        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
+            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
+        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
+            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
+        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
+            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
+        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
+            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
+        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
+            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
+        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
+            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
+    </string-array>
+</resources>
