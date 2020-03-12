@@ -104,5 +104,20 @@
         <item name="android:textColor">?android:attr/textColorPrimary</item>
 
     </style>
+    <!-- THIEN THAO -->
+
+    <style name="ThaoButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:colorButtonNormal">#e62e00</item>
+        <item name="android:colorActivatedHighlight">#e62e00</item>
+        <item name="android:colorPrimary">#e62e00</item>
+        <item name="colorPrimaryDark">#e62e00</item>
+        <item name="colorAccent">#e62e00</item>
+    </style>
+
+    <style name="ThaoBookingSuccess" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorAccent">#ac3</item>
+    </style>
+
+    <!-- END THIEN THAO-->
 
 </resources>

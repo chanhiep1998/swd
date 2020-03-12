@@ -31,6 +31,48 @@
         <activity
             android:name=".activities.PopActivity"
             android:theme="@style/Theme.AppCompat.Dialog" />
+        android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".activities.BookingSuccessActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.thaotest.TestProgressDialog">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.thaotest.CheckMarkAnimation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.BookingSummary">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.BookingDetailActivity" />
+        <activity android:name=".activities.BookingActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.OrderActivity" />
+        <activity
+            android:name=".activities.PopActivity"
+            android:theme="@style/PopUp" />
         <activity android:name=".activities.ClinicDetailActivity" />
         <activity android:name=".activities.DetailedActivity" />
         <activity android:name=".activities.MainActivity">
