@@ -14,7 +14,7 @@ public class BookingSuccessActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking_success);
-        button = (MaterialButton) findViewById(R.id.btn_datcho);
+        button = findViewById(R.id.btn_datcho);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

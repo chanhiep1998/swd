@@ -99,6 +99,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         intent.putExtra("clinicDescription", description.getText());
         intent.putExtra("clinicDiscount", discount.getText());
         intent.putExtra("clinicImage", discount.getText());
+
         intent.putExtra("isClinic","service");
         startActivity(intent);
     }

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginVertical="5dp"
-    android:layout_marginHorizontal="5dp"
+    android:id="@+id/bookingTimeContainer"
     android:layout_width="100dp"
-    android:layout_height="80dp"
+    android:layout_height="120dp"
+    android:layout_marginHorizontal="5dp"
+    android:layout_marginVertical="5dp"
+    android:background="@drawable/booking_date_border"
     android:elevation="3dp"
-    android:background="@drawable/border"
-    app:cardPreventCornerOverlap="true"
-    app:cardCornerRadius="6dp"
     android:onClick="clickToBook"
-    android:id="@+id/bookingTimeContainer">
+    app:cardCornerRadius="6dp"
+    app:cardPreventCornerOverlap="true">
 
 
     <LinearLayout
@@ -18,29 +18,50 @@
         android:layout_height="wrap_content"
         android:background="@drawable/booking_date_border"
         android:orientation="vertical">
+
         <TextView
             android:id="@+id/bookingTimeTextView"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:background="@color/blue"
+            android:gravity="center"
             android:text="16:00"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:gravity="center"
-            android:textStyle="bold"
             android:textSize="14sp"
-            android:background="@color/blue"
-            />
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/bookingPriceTextView"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:text="400.000 đ"
-            android:textColor="@color/colorAccent"
-            android:textAlignment="center"
+
             android:gravity="center"
+            android:text="400.000 đ"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="14sp"
+
+            />
+
+        <View
+            android:layout_marginHorizontal="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#eeeeee" />
+
+        <TextView
+            android:id="@+id/peopleCountTextView"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="3 đã đặt"
+            android:textAlignment="center"
+            android:textColor="@color/orange"
             android:textSize="14sp"
 
             />
     </LinearLayout>
+
 
 </androidx.cardview.widget.CardView>

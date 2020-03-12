@@ -12,8 +12,15 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
+        android:theme="@style/Theme.Dental"
         android:usesCleartextTraffic="true">
+        <activity android:name=".activities.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".activities.NearMeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,14 +32,9 @@
             android:value="@string/google_maps_key" />
 
         <activity android:name=".activities.BookingDetailActivity" />
-        <activity android:name=".activities.BookingActivity"></activity>
-        <activity android:name=".activities.TravelActivity"></activity>
+        <activity android:name=".activities.BookingActivity" />
+        <activity android:name=".activities.TravelActivity" />
         <activity android:name=".activities.OrderActivity" />
-        <activity
-            android:name=".activities.PopActivity"
-            android:theme="@style/Theme.AppCompat.Dialog" />
-        android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
-        android:usesCleartextTraffic="true">
         <activity android:name=".activities.BookingSuccessActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -61,26 +63,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.BookingDetailActivity" />
-        <activity android:name=".activities.BookingActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".activities.OrderActivity" />
         <activity
             android:name=".activities.PopActivity"
-            android:theme="@style/PopUp" />
+            android:theme="@style/Theme.AppCompat.Light.Dialog" />
         <activity android:name=".activities.ClinicDetailActivity" />
         <activity android:name=".activities.DetailedActivity" />
         <activity android:name=".activities.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

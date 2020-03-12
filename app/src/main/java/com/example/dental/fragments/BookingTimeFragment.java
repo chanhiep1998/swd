@@ -36,7 +36,7 @@ public class BookingTimeFragment extends Fragment {private RecyclerView bookingT
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
 
         bookingTime = (RecyclerView) view.findViewById(R.id.bookingTimeList);
-        adapter = new BookingTimeAdapter(getContext(), bookingTimeBloc.getHomeProducts());
+//        adapter = new BookingTimeAdapter(getContext(), bookingTimeBloc.getHomeProducts());
         bookingTime.setLayoutManager(layoutManager);
         bookingTime.setAdapter(adapter);
         return view;

@@ -28,7 +28,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:progressNormalSize="4dp"
-        app:progressReachColor="#e62e00"
+        app:progressReachColor="@color/colorAccent"
         app:progressReachSize="4dp"
         app:progressStyle="FillInnerArc"
         app:radius="28dp" />

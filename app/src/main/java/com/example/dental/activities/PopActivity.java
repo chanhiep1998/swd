@@ -2,14 +2,16 @@ package com.example.dental.activities;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -26,6 +28,7 @@ import com.nineoldandroids.animation.ValueAnimator;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -44,20 +47,51 @@ public class PopActivity extends AppCompatActivity implements ClinicView {
             "300k",
             "400k"
     };
+    String[] BookingTime = new String[]{
+            "9:00",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "13:00",
+            "14:30",
+            "15:30",
+            "16:30",
+            "17:00",
+            "19:00",
+            "20:00"
+    };
+
+
+    List<Integer> people;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.setFinishOnTouchOutside(true);
+
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
 
         setContentView(R.layout.fragment_service_detail);
-        name =  findViewById(R.id.itemNameTextView);
-        oldPrice =  findViewById(R.id.itemOldPriceTextView);
-        price =  findViewById(R.id.itemPriceTextView);
+        name = findViewById(R.id.itemNameTextView);
+        oldPrice = findViewById(R.id.itemOldPriceTextView);
+        price = findViewById(R.id.itemPriceTextView);
         description = findViewById(R.id.itemDescriptionTextView);
         discount = findViewById(R.id.itemDiscountTextView);
-        image =  findViewById(R.id.itemImage);
+        image = findViewById(R.id.itemImage);
+        people = new ArrayList<>();
+        people.add(0);
+        people.add(0);
+        people.add(0);
+        people.add(3);
+        people.add(5);
+        people.add(8);
+        people.add(0);
+        people.add(0);
+        people.add(0);
+        people.add(0);
+        people.add(0);
+        people.add(0);
+        Collections.shuffle(people);
 
 //        spinnerWithTextView = (Spinner)findViewById(R.id.spinner);
 //
@@ -79,11 +113,34 @@ public class PopActivity extends AppCompatActivity implements ClinicView {
         presenter = new ClinicPresenter(this, this);
         presenter.getClinicById();
         addItemsOnSpinner1();
+        RelativeLayout close = findViewById(R.id.closeRelativeLayout);
+        close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL, WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL);
+
+        // ...but notify us that it happened.
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH, WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH);
+
+    }
+
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        if (MotionEvent.ACTION_OUTSIDE == event.getAction()) {
+            finish();
+            return true;
+        }
+
+        return super.onTouchEvent(event);
     }
 
     public void addItemsOnSpinner1() {
 
-        spinner1 =  findViewById(R.id.spinner1);
+        spinner1 = findViewById(R.id.spinner1);
         FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment fragment = fragmentManager.findFragmentById(bookingDateFragment);
 //        List<String> list = new ArrayList<String>();
@@ -102,12 +159,11 @@ public class PopActivity extends AppCompatActivity implements ClinicView {
 //                fragment.getView().setVisibility(View.GONE);
                 ArrayList<BookingTimeModel> tempList = new ArrayList<>();
                 Random rd = new Random();
-                tempList.add(new BookingTimeModel("8:00", Price[rd.nextInt(4)]));
-                tempList.add(new BookingTimeModel("10:30", Price[rd.nextInt(4)]));
-                tempList.add(new BookingTimeModel("13:00", Price[rd.nextInt(4)]));
-                tempList.add(new BookingTimeModel("15:00", Price[rd.nextInt(4)]));
-                tempList.add(new BookingTimeModel("17:00", Price[rd.nextInt(4)]));
-                tempList.add(new BookingTimeModel("19:00", Price[rd.nextInt(4)]));
+                Collections.shuffle(people);
+                for (int i = 0; i < 12; i++) {
+                    tempList.add(new BookingTimeModel(BookingTime[i], Price[rd.nextInt(4)], people.get(i)));
+                }
+
                 BookingTimeAdapter adapter = new BookingTimeAdapter(getApplicationContext(), tempList);
                 RecyclerView bookingTime = findViewById(R.id.bookingTimeList);
                 Log.i("result", tempList.get(0).getTime());
@@ -121,7 +177,7 @@ public class PopActivity extends AppCompatActivity implements ClinicView {
         });
 
 
-        final TextView showMore =  findViewById(R.id.showMoreTextView);
+        final TextView showMore = findViewById(R.id.showMoreTextView);
         showMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

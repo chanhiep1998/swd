@@ -22,12 +22,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <TextView
-            style="@style/TextAppearance.Dental.Toolbar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TOOSSHINY"
-            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="121dp"
+            android:layout_height="60dp"
+            android:src="@drawable/logo" />
 
         <View
             android:layout_width="0dp"
@@ -41,16 +40,18 @@
             android:backgroundTint="@color/colorAccent"
             android:foregroundTint="@color/colorAccent"
             android:src="@drawable/ic_search_24px"
+            android:layout_marginTop="10dp"
             app:srcCompat="@drawable/ic_search_24px" />
 
         <ImageView
             android:id="@+id/nearMeImageView"
-            android:padding="2dp"
+            android:layout_marginTop="10dp"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginRight="20dp"
             android:backgroundTint="@color/colorAccent"
             android:foregroundTint="@color/colorAccent"
+            android:padding="2dp"
             android:src="@drawable/ic_my_location_24px"
             app:srcCompat="@drawable/ic_my_location_24px" />
 

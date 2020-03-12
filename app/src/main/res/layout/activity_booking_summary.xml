@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
-
+    style="@style/Theme.Dental"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -18,7 +16,6 @@
             android:layout_width="match_parent"
             android:layout_height="58dp"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
-
             app:toolbarId="@+id/toolbar">
 
             <RelativeLayout
@@ -36,10 +33,16 @@
                     android:id="@+id/textView20"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
                     android:fontFamily="@font/montserrat"
                     android:text="XÁC NHẬN ĐẶT HẸN"
-                    android:textSize="18sp"
+                    android:layout_centerInParent="true"
+                    android:padding="5dp"
+                    android:shadowColor="@color/colorAccent"
+                    android:shadowDx="0.0"
+                    android:shadowDy="0.0"
+                    android:shadowRadius="1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/colorAccent"
                     android:textStyle="bold" />
             </RelativeLayout>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
@@ -60,7 +63,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="50dp"
                 app:cardCornerRadius="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -69,6 +72,7 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@color/white"
                     android:padding="10dp">
 
                     <TextView
@@ -233,6 +237,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="41dp"
                         android:layout_marginTop="15dp"
+                        android:background="@color/white"
                         android:fontFamily="@font/montserrat"
                         android:text="Email"
                         app:layout_constraintStart_toStartOf="parent"
@@ -314,7 +319,6 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                android:layout_marginBottom="30dp"
                 android:padding="16dp">
 
                 <TextView
@@ -334,6 +338,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="10dp"
+                    android:background="@color/white"
                     android:elevation="0dp"
                     android:padding="5dp"
                     app:cardCornerRadius="5dp"
@@ -349,7 +354,8 @@
                         android:layout_marginStart="15dp"
                         android:layout_marginTop="4dp"
                         android:layout_marginEnd="20dp"
-                        android:background="#ffffff"
+                        android:background="@null"
+                        android:fadingEdge="horizontal|vertical"
                         android:gravity="top|left"
                         android:hint="Nếu bạn có yêu cầu đặc biệt, D-Care sẽ gửi đi giúp bạn."
                         android:maxLines="5"
@@ -366,7 +372,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:elevation="0dp">
+        android:elevation="6dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -379,8 +385,8 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_marginEnd="10dp"
-                android:background="#e62e00"
-                android:backgroundTint="#e62e00"
+                android:background="@color/colorAccent"
+                android:backgroundTint="@color/colorAccent"
                 android:elevation="0dp"
                 android:fontFamily="@font/montserrat"
                 android:text="GỬI YÊU CẦU ĐẶT CHỖ"

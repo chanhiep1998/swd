@@ -139,7 +139,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="date"
+                        android:inputType="datetime"
                         android:maxLines="1" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -163,7 +163,6 @@
                     android:layout_height="55dp"
                     android:textSize="20sp"
                     android:text="CẬP NHẬT"
-                    android:foreground="@drawable/accent_border"
                     android:elevation="10dp"/>
             </LinearLayout>
 

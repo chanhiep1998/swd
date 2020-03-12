@@ -260,6 +260,8 @@
                             app:layout_constraintVertical_bias="0.296" />
 
                         <Button
+
+                            android:onClick="clickToTravelFromNotification"
                             android:id="@+id/button2"
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
@@ -277,6 +279,7 @@
                             app:layout_constraintEnd_toEndOf="parent" />
 
                         <Button
+                            android:onClick="clickToDialFromNotification"
                             android:id="@+id/button"
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"

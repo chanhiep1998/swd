@@ -52,6 +52,46 @@
                             android:layout_marginBottom="3dp"
                             android:src="@drawable/back" />
                     </RelativeLayout>
+
+<!--                    <RelativeLayout-->
+<!--                        android:layout_width="30dp"-->
+<!--                        android:layout_height="30dp"-->
+<!--                        android:layout_alignParentRight="true"-->
+<!--                        android:layout_marginHorizontal="20dp"-->
+<!--                        android:layout_marginTop="10dp"-->
+<!--                        android:onClick="clickToClose"-->
+<!--                        android:background="@drawable/circle">-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="20dp"-->
+<!--                            android:layout_height="20dp"-->
+<!--                            android:layout_alignParentEnd="true"-->
+<!--                            android:layout_alignParentBottom="true"-->
+<!--                            android:layout_marginEnd="4dp"-->
+<!--                            android:layout_marginBottom="4dp"-->
+<!--                            android:src="@drawable/ic_message_24px"-->
+<!--                            android:tint="@color/white" />-->
+<!--                    </RelativeLayout>-->
+
+                    <RelativeLayout
+                        android:layout_width="30dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_height="30dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="10dp"
+                        android:onClick="clickToClose"
+                        android:background="@drawable/circle">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="2dp"
+                            android:layout_marginBottom="3dp"
+                            android:src="@drawable/search" />
+                    </RelativeLayout>
+
                 </RelativeLayout>
             </LinearLayout>
 

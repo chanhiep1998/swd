@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -58,16 +59,18 @@ public class ClinicPromotionAdapter extends RecyclerView.Adapter<ClinicPromotion
         TextView clinicDiscount;
         TextView clinicDescription;
         ImageView clinicImage;
+        LinearLayout serviceLayout;
 
         public RecyclerViewHolder(View itemView) {
             super(itemView);
-            clinicName = (TextView) itemView.findViewById(R.id.itemNameTextView);
-            clinicOldPrice = (TextView) itemView.findViewById(R.id.itemOldPriceTextView);
-            clinicPrice = (TextView) itemView.findViewById(R.id.itemPriceTextView);
-            clinicDiscount = (TextView) itemView.findViewById(R.id.itemDiscountTextView);
-            clinicDescription = (TextView) itemView.findViewById(R.id.itemDescriptionTextView);
-            clinicImage = (ImageView) itemView.findViewById(R.id.itemImage);
-            clinicName.setOnClickListener(new View.OnClickListener() {
+            serviceLayout = itemView.findViewById(R.id.serviceLinearLayout);
+            clinicName = itemView.findViewById(R.id.itemNameTextView);
+            clinicOldPrice = itemView.findViewById(R.id.itemOldPriceTextView);
+            clinicPrice =  itemView.findViewById(R.id.itemPriceTextView);
+            clinicDiscount =  itemView.findViewById(R.id.itemDiscountTextView);
+            clinicDescription =  itemView.findViewById(R.id.itemDescriptionTextView);
+            clinicImage =  itemView.findViewById(R.id.itemImage);
+            serviceLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(mContext, PopActivity.class);

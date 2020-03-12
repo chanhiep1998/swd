@@ -1,14 +1,17 @@
 package com.example.dental.activities;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,6 +43,8 @@ public class BookingDetailActivity extends AppCompatActivity implements OnMapRea
     LatLng clinic;
 
     TextView clinicAddress;
+
+    private static final int MY_PERMISSIONS_REQUEST_READ_CONTACTS = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,5 +125,23 @@ public class BookingDetailActivity extends AppCompatActivity implements OnMapRea
         };
 
 
+    }
+
+    public void clickToDialFromNotification(View view) {
+        Intent intent = new Intent(Intent.ACTION_CALL);
+        intent.setData(Uri.parse("tel:0915223623"));
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE)
+                != PackageManager.PERMISSION_GRANTED) {
+            Toast.makeText(this, "NOT GRANTED", Toast.LENGTH_LONG).show();
+            String[] permissions = {Manifest.permission.CALL_PHONE};
+            requestPermissions(permissions, MY_PERMISSIONS_REQUEST_READ_CONTACTS);
+        } else {
+            startActivity(intent);
+        }
+    }
+
+    public void clickToTravelFromNotification(View view) {
+        Intent intent = new Intent(getApplicationContext(), TravelActivity.class);
+        startActivity(intent);
     }
 }
