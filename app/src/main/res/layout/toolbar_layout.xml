@@ -2,12 +2,57 @@
 <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/toolbar"
+    style="@style/Widget.Dental.Toolbar"
     android:layout_width="match_parent"
-    android:layout_height="?attr/actionBarSize"
-    android:background="@color/colorPrimary"
-    android:orientation="vertical"
-    android:theme="@style/ThemeOverlay.AppCompat.Light"
-    android:visibility="invisible"
-    app:layout_scrollFlags="scroll|enterAlways">
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="0dp"
+    android:layout_marginBottom="0dp"
+    android:background="#ffffff"
+    android:elevation="6dp"
+    app:collapseIcon="@drawable/ic_search_24px"
+    app:layout_collapseMode="pin"
+    app:popupTheme="@style/AppTheme"
+    app:subtitleTextColor="#00E3B3B3"
+    app:title="TOOSSHINY"
+    app:titleTextAppearance="@style/TextAppearance.Dental.Toolbar"
+    app:titleTextColor="@color/colorAccent">
 
+    <LinearLayout
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/TextAppearance.Dental.Toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TOOSSHINY"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="5dp"
+            android:backgroundTint="@color/colorAccent"
+            android:foregroundTint="@color/colorAccent"
+            android:src="@drawable/ic_search_24px"
+            app:srcCompat="@drawable/ic_search_24px" />
+
+        <ImageView
+            android:id="@+id/nearMeImageView"
+            android:padding="2dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="20dp"
+            android:backgroundTint="@color/colorAccent"
+            android:foregroundTint="@color/colorAccent"
+            android:src="@drawable/ic_my_location_24px"
+            app:srcCompat="@drawable/ic_my_location_24px" />
+
+    </LinearLayout>
 </androidx.appcompat.widget.Toolbar>

@@ -10,4 +10,5 @@ public interface ClinicService {
     void getMostDiscountClinics(CallBackData<List<ClinicModel>> callBackData);
     void getMostLikedClinics(CallBackData<List<ClinicModel>> callBackData);
     void getNearbyClinics(CallBackData<List<ClinicModel>> callBackData);
+    void getClinicById(CallBackData<ClinicModel> callBackData);
 }

@@ -1,12 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     tools:context=".fragments.HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:elevation="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+<!--            <androidx.appcompat.widget.Toolbar-->
+<!--                android:id="@+id/toolbar"-->
+<!--                style="@style/Widget.Dental.Toolbar"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="#ffffff"-->
+<!--                app:collapseIcon="@drawable/ic_search_24px"-->
+<!--                app:layout_collapseMode="pin"-->
+<!--                app:popupTheme="@style/AppTheme"-->
+<!--                app:subtitleTextColor="#00E3B3B3"-->
+<!--                app:title="E-TEETH"-->
+<!--                app:titleTextAppearance="@style/TextAppearance.Dental.Toolbar"-->
+<!--                app:titleTextColor="@color/colorAccent">-->
+
+<!--                <LinearLayout-->
+
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content">-->
+
+<!--                    <TextView-->
+<!--                        style="@style/TextAppearance.Dental.Toolbar"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="E-TEETH"-->
+<!--                        android:textStyle="bold" />-->
+
+<!--                    <View-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="0dp"-->
+<!--                        android:layout_weight="1" />-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="34dp"-->
+<!--                        android:layout_height="34dp"-->
+<!--                        android:layout_marginRight="20dp"-->
+<!--                        android:backgroundTint="@color/colorAccent"-->
+<!--                        android:foregroundTint="@color/colorAccent"-->
+<!--                        android:src="@drawable/ic_search_24px"-->
+<!--                        app:srcCompat="@drawable/ic_search_24px" />-->
+<!--                </LinearLayout>-->
+<!--            </androidx.appcompat.widget.Toolbar>-->
+
+            <include layout="@layout/toolbar_layout"></include>
+
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -17,69 +76,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="?attr/actionBarSize"
             android:orientation="vertical"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-
-
-            <com.google.android.material.appbar.AppBarLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/app_bar"
-                    style="@style/Widget.Dental.Toolbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    app:navigationIcon="@drawable/home"
-                    android:splitMotionEvents="true"
-                    android:elevation="2dp"
-                    app:title="E-TEETH" >
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="10"
-                        android:orientation="horizontal">
-
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="8"
-                            android:text="E-TEETH"
-                            android:textColor="#fff"
-                            android:textSize="25dp"
-                            android:textStyle="bold" />
-
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:layout_width="34dp"
-                            android:layout_height="34dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginRight="10dp"
-                            android:src="@drawable/search"
-
-
-                            />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-                </androidx.appcompat.widget.Toolbar>
-            </com.google.android.material.appbar.AppBarLayout>
-
-
-            <HorizontalScrollView
-                android:id="@+id/scroll"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
 
 
                 <androidx.cardview.widget.CardView
@@ -89,7 +89,7 @@
 
                     <com.smarteist.autoimageslider.SliderView
                         android:id="@+id/imageSlider"
-                        android:layout_width="412dp"
+                        android:layout_width="match_parent"
                         android:layout_height="180dp"
                         app:sliderAutoCycleDirection="left"
                         app:sliderAutoCycleEnabled="true"
@@ -105,7 +105,7 @@
                         app:sliderScrollTimeInSec="5"
                         app:sliderStartAutoCycle="true" />
                 </androidx.cardview.widget.CardView>
-            </HorizontalScrollView>
+
 
             <Space
                 android:layout_width="match_parent"
@@ -114,10 +114,9 @@
 
             <fragment
                 android:id="@+id/clinicFragmentNearby"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:name="com.example.dental.fragments.HomeNearbyFragment"
-                />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
             <Space
                 android:layout_width="match_parent"
@@ -125,23 +124,20 @@
 
             <fragment
                 android:id="@+id/clinicFragmentMostDiscount"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:name="com.example.dental.fragments.HomeMostDiscountFragment"
-                />
-
-
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="10dp" />
+
             <fragment
                 android:id="@+id/clinicFragmentMostLiked"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:name="com.example.dental.fragments.HomeMostLikedFragment"
-                />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
 
             <View
@@ -150,10 +146,9 @@
 
             <fragment
                 android:id="@+id/clinicMore"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:name="com.example.dental.fragments.HomeMoreFragment"
-                />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
             <Space
                 android:layout_width="match_parent"
@@ -163,4 +158,4 @@
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
-</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

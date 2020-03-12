@@ -14,6 +14,8 @@
 
     <style name="Theme.Dental" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
+        <item name="windowActionBar">true</item>
+        <item name="android:windowNoTitle">true</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
@@ -30,7 +32,9 @@
     </style>
 
     <style name="TextAppearance.Dental.Toolbar" parent="TextAppearance.MaterialComponents.Button">
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorAccent</item>
     </style>
 
     <style name="VerifiedText.Dental.Text" parent="Widget.AppCompat.TextView">
@@ -74,6 +78,31 @@
 
     <style name="proxFont" parent="@android:style/TextAppearance.Small">
         <!--        <item name="android:fontFamily">@font/VNF-ProximaNovaCond-Regular</item>-->
+    </style>
+
+
+    <style name="TextAppearance.Dental.TextInputLayout.HintText" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="Widget.Dental.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="hintTextAppearance">@style/TextAppearance.Dental.TextInputLayout.HintText</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="boxStrokeColor">@color/colorAccent</item>
+        <item name="android:elevation">10dp</item>
+        <item name="android:textColorHint">@color/textColorPrimary</item>
+    </style>
+
+    <style name="Widget.Dental.Button" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textColor">@color/white</item>
+        <item name="backgroundTint">?attr/colorAccent</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="Widget.Dental.Button.TextButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+
     </style>
 
 </resources>

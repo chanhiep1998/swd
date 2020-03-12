@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.dental.activities.ClinicDetailActivity;
 import com.example.dental.R;
 import com.example.dental.models.ClinicModel;
-import com.example.dental.utils.ImageDownloader;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -39,12 +39,13 @@ public class HomeNearbyAdapter extends RecyclerView.Adapter<HomeNearbyAdapter.Re
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewHolder holder, int position) {
+        holder.clinicId.setText(clinicList.get(position).getId() + "");
         holder.clinicName.setText(clinicList.get(position).getName());
         holder.clinicOldPrice.setText(String.format("%,d", clinicList.get(position).getOldPrice()) + " đ");
         holder.clinicPrice.setText(String.format("%,d", clinicList.get(position).getPrice()) + " đ");
         holder.clinicDescription.setText(clinicList.get(position).getDescription());
         holder.clinicDiscount.setText(clinicList.get(position).getDiscountPercent() + "%");
-        new ImageDownloader(holder.clinicImage).execute(clinicList.get(position).getImage());
+        Picasso.get().load(clinicList.get(position).getImage()).into(holder.clinicImage);
     }
 
     @Override
@@ -58,10 +59,12 @@ public class HomeNearbyAdapter extends RecyclerView.Adapter<HomeNearbyAdapter.Re
         TextView clinicOldPrice;
         TextView clinicDiscount;
         TextView clinicDescription;
+        TextView clinicId;
         ImageView clinicImage;
 
         public RecyclerViewHolder(View itemView) {
             super(itemView);
+            clinicId = (TextView) itemView.findViewById(R.id.itemId);
             clinicName = (TextView) itemView.findViewById(R.id.itemNameTextView);
             clinicOldPrice = (TextView) itemView.findViewById(R.id.itemOldPriceTextView);
             clinicPrice = (TextView) itemView.findViewById(R.id.itemPriceTextView);

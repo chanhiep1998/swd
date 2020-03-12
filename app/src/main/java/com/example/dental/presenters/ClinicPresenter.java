@@ -36,6 +36,20 @@ public class ClinicPresenter {
         });
     }
 
+    public void getClinicById() {
+        helper.getClinicById(new CallBackData<ClinicModel>() {
+            @Override
+            public void onSuccess(ClinicModel clinicModel) {
+                view.getClinicById(clinicModel);
+            }
+
+            @Override
+            public void onFail(String message) {
+                //Có thể tạo một hàm gì đó để trả về View
+            }
+        });
+    }
+
     public void getNearbyClinics() {
         helper.getNearbyClinics(new CallBackData<List<ClinicModel>>() {
             @Override

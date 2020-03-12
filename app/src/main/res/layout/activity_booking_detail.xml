@@ -27,19 +27,25 @@
                     <androidx.appcompat.widget.Toolbar
                         android:id="@+id/toolbar"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="?attr/actionBarSize"
                         android:background="#ffffff"
                         app:popupTheme="@style/AppTheme"
                         app:layout_collapseMode="pin"
                         />
 
                         <TextView
+
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerInParent="true"
+                            android:padding="5dp"
+                            android:shadowColor="@color/colorAccent"
+                            android:shadowDx="0.0"
+                            android:shadowDy="0.0"
+                            android:shadowRadius="1"
                             android:text="THÔNG TIN ĐẶT CHỖ"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                            android:textColor="#e62e00"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                            android:textColor="@color/colorAccent"
                             android:textStyle="bold"
                             app:fontFamily="@font/montserrat" />
                     </RelativeLayout>
@@ -99,8 +105,8 @@
                         android:layout_marginStart="148dp"
                         android:drawableEnd="@drawable/copy"
                         android:drawablePadding="3dp"
-                        android:text="JJ68556532"
-                        android:textColor="@android:color/holo_red_dark"
+                        android:text="ED68556532"
+                        android:textColor="@color/colorAccent"
                         android:textSize="16dp"
                         app:fontFamily="@font/montserrat"
                         app:layout_constraintStart_toStartOf="parent"
@@ -162,8 +168,11 @@
                                 android:id="@+id/textView13"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="35dp"
                                 android:text="Thời gian đến"
                                 app:fontFamily="@font/montserrat"
+                                app:layout_constraintEnd_toStartOf="@+id/textView11"
+                                app:layout_constraintHorizontal_bias="0.192"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -172,6 +181,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="end"
+                                android:layout_marginTop="35dp"
                                 android:text="Thứ ba 25/02/2020"
                                 app:fontFamily="@font/montserrat"
                                 app:layout_constraintEnd_toEndOf="parent"
@@ -181,12 +191,23 @@
                                 android:id="@+id/textView11"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginEnd="3dp"
-                                android:layout_marginRight="3dp"
+                                android:layout_marginTop="35dp"
+                                android:layout_marginEnd="5dp"
                                 android:text="02:15 PM"
-                                android:textColor="#e62e00"
+                                android:textColor="@color/textColorVerify"
+                                android:textStyle="bold"
                                 app:fontFamily="@font/montserrat"
                                 app:layout_constraintEnd_toStartOf="@+id/textView12"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/clinicAddressTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="03-07 Trần Quốc Toản, phường 8, Quận 3, TPHCM"
+                                app:fontFamily="@font/montserrat"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -226,42 +247,30 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/view" />
 
-                        <ImageView
-                            android:id="@+id/imageView2"
-                            android:layout_width="309dp"
-                            android:layout_height="105dp"
-                            android:layout_marginTop="40dp"
-                            android:scaleType="fitXY"
+                        <fragment
+                            android:id="@+id/map"
+                            android:name="com.google.android.gms.maps.SupportMapFragment"
+                            android:layout_width="344dp"
+                            android:layout_height="120dp"
+                            android:layout_marginVertical="20dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.436"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/view"
-                            app:srcCompat="@drawable/map" />
-
-                        <TextView
-                            android:id="@+id/textView16"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginTop="17dp"
-                            android:text="03-07 Trần Quốc Toản, phường 8, Quận 3, TPHCM"
-                            app:fontFamily="@font/montserrat"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                            app:layout_constraintTop_toTopOf="@+id/view"
+                            app:layout_constraintVertical_bias="0.296" />
 
                         <Button
                             android:id="@+id/button2"
-                            android:layout_width="160dp"
+                            android:layout_width="170dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="20dp"
-                            android:layout_marginRight="20dp"
+                            android:layout_marginEnd="24dp"
                             android:layout_marginBottom="8dp"
-                            android:drawableLeft="@drawable/send"
+                            android:drawableLeft="@drawable/ic_near_me_24px"
+                            android:drawableTint="@color/colorAccent"
                             android:paddingLeft="25dp"
                             android:paddingRight="15dp"
                             android:text="Chỉ đường"
-                            android:textColor="#e62e00"
+                            android:textColor="@color/colorAccent"
                             android:textSize="13dp"
                             app:backgroundTint="#f2f2f2"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -269,21 +278,21 @@
 
                         <Button
                             android:id="@+id/button"
-                            android:layout_width="160dp"
+                            android:layout_width="170dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
                             android:layout_marginBottom="8dp"
                             android:drawableLeft="@android:drawable/stat_sys_phone_call"
-                            android:drawableTint="#EC927C"
+                            android:drawableTint="@color/colorAccent"
                             android:paddingLeft="15dp"
                             android:paddingRight="3dp"
                             android:text="Gọi phòng khám"
-                            android:textColor="#e62e00"
+                            android:textColor="@color/colorAccent"
                             android:textSize="13dp"
                             app:backgroundTint="#f2f2f2"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toStartOf="@+id/button2"
-                            app:layout_constraintHorizontal_bias="0.516"
+                            app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toStartOf="parent" />
 
 
@@ -298,10 +307,10 @@
                     android:layout_gravity="center"
                     android:paddingLeft="25dp"
                     android:paddingRight="15dp"
-                    android:text="ĐÃ HỦY"
+                    android:text="HỦY"
                     android:textColor="#ffffff"
-                    android:textSize="13dp"
-                    app:backgroundTint="#d9d9d9" />
+                    android:textSize="18sp"
+                    app:backgroundTint="@color/colorAccent" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"

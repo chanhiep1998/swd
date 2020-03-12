@@ -15,20 +15,7 @@ public class ClinicDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clinic_detail);
-        loadFragment(new HomeFragment());
     }
 
-    private boolean loadFragment(Fragment fragment) {
-        if(fragment != null) {
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.fragment_container,fragment)
-                    .commit();
-            return true;
-        }
-        return false;
-    }
 
-    public void clickToAddToCart(View view) {
-    }
 }

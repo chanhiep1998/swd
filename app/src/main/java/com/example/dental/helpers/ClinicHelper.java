@@ -77,4 +77,17 @@ public class ClinicHelper {
             }
         });
     }
+
+    public void getClinicById(final CallBackData<ClinicModel> callBackData) {
+        service = new ClinicServiceImpl();
+        service.getClinicById(new CallBackData<ClinicModel>() {
+            @Override
+            public void onSuccess(ClinicModel clinicModel) {
+                callBackData.onSuccess(clinicModel);
+            }
+            @Override
+            public void onFail(String message) {
+            }
+        });
+    }
 }

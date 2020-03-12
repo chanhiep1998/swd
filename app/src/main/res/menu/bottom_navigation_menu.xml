@@ -2,22 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/navigation_home"
-        android:iconTint="@color/colorAccent"
-        android:icon="@drawable/home"
+        android:icon="@drawable/home_selector"
         android:title="Trang chủ" />
     <item
-        android:id="@+id/navigation_calendar"
-        android:iconTint="@color/colorAccent"
-        android:icon="@drawable/calendar"
-        android:title="Đặt lịch" />
-    <item
         android:id="@+id/navigation_notification"
-        android:iconTint="@color/colorAccent"
-        android:icon="@drawable/notification"
+        android:icon="@drawable/notification_selector"
         android:title="Thông báo" />
     <item
         android:id="@+id/navigation_account"
-        android:iconTint="@color/colorAccent"
-        android:icon="@drawable/person"
+        android:icon="@drawable/account_selector"
         android:title="Tài khoản" />
 </menu>

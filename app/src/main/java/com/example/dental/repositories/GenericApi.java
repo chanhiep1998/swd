@@ -24,6 +24,12 @@ public interface GenericApi {
     @GET(ConfigApi.Api.GET_CLINIC_MOST_DISCOUNT)
     Call<ResponseBody> getMostDiscountClinics();
 
+    @GET(ConfigApi.Api.GET_CLINIC_BY_ID)
+    Call<ResponseBody> getClinicById();
+
+    @GET(ConfigApi.Api.GET_COMMENT_FOR_CLINIC)
+    Call<ResponseBody> getCommentForClinic();
+
 //    @GET(ConfigApi.Api.GET_VEHICLE)
 //    Call<ResponseBody> getVehicleById(@Path("vehicle_id") int vehicleId);
 

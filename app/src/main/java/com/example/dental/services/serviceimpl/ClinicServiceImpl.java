@@ -104,6 +104,47 @@ public class ClinicServiceImpl implements ClinicService {
         }
     }
 
+    @Override
+    public void getClinicById(final CallBackData<ClinicModel> callBackData) {
+        Call<ResponseBody> serviceCall = clientApi.getGenericApi().getClinicById();
+        System.out.println(serviceCall);
+        try {
+            serviceCall.enqueue(new Callback<ResponseBody>() {
+                @Override
+                public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                    if (response != null && response.body() != null) {
+                        if (response.code() == 200) {
+                            try {
+                                String result = response.body().string();
+                                Log.i("Result", result);
+                                Type type = new TypeToken<ClinicModel>() {
+                                }.getType();
+                                ClinicModel responseResult = new Gson().fromJson(result, type);
+                                if (responseResult != null) {
+                                    callBackData.onSuccess(responseResult);
+                                } else {
+                                    callBackData.onFail("Failed!");
+                                }
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        } else {
+                            callBackData.onFail(Constant.MSG_ERROR);
+                        }
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<ResponseBody> call, Throwable t) {
+                    System.out.println(t.getMessage());
+                    callBackData.onFail("FAILED!");
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public void getMostLikedClinics(final CallBackData<List<ClinicModel>> callBackData) {
         Call<ResponseBody> serviceCall = clientApi.getGenericApi().getMostLikedClinics();
         System.out.println(serviceCall);

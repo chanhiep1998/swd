@@ -1,6 +1,7 @@
 package com.example.dental.fragments;
 
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -9,9 +10,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.example.dental.activities.MainActivity;
 import com.example.dental.R;
+import com.example.dental.activities.NearMeActivity;
 import com.example.dental.adapters.SliderAdapter;
 import com.example.dental.models.ClinicModel;
 import com.smarteist.autoimageslider.IndicatorAnimations;
@@ -35,7 +38,7 @@ public class HomeFragment extends Fragment {
 
     MainActivity mainActivity;
     SliderView sliderView;
-
+    ImageView nearMeImageView;
     public void slider_auto() {
 
 
@@ -70,6 +73,14 @@ public class HomeFragment extends Fragment {
         sliderView = view.findViewById(R.id.imageSlider);
         slider_auto();
         mainActivity = (MainActivity) getActivity();
+        nearMeImageView = view.findViewById(R.id.nearMeImageView);
+        nearMeImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), NearMeActivity.class));
+            }
+        });
+
         return view;
     }
 

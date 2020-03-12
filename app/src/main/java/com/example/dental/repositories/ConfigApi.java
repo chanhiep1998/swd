@@ -12,6 +12,9 @@ public class ConfigApi {
         String GET_CLINIC_NEARBY = "NearbyClinics";
         String GET_CLINIC_MOST_LIKED = "MostLiked";
         String GET_CLINIC_MOST_DISCOUNT = "MostDiscount";
+        String GET_CLINIC_BY_ID = "clinic";
+
+        String GET_COMMENT_FOR_CLINIC = "comments";
         String GET_DCLINIC = "vehicles/{vehicle_id}";
 
     }

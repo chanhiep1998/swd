@@ -1,6 +1,7 @@
 package com.example.dental.fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -14,6 +15,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.dental.R;
+import com.example.dental.activities.BookingActivity;
+import com.example.dental.activities.BookingDetailActivity;
 import com.example.dental.adapters.BookingTimeAdapter;
 import com.example.dental.adapters.HomeNearbyAdapter;
 import com.example.dental.blocs.BookingTimeBloc;
@@ -37,5 +40,9 @@ public class BookingTimeFragment extends Fragment {private RecyclerView bookingT
         bookingTime.setLayoutManager(layoutManager);
         bookingTime.setAdapter(adapter);
         return view;
+    }
+
+    public void clickToBook(View view) {
+        startActivity(new Intent(getContext(), BookingDetailActivity.class));
     }
 }

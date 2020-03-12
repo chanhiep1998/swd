@@ -71,4 +71,9 @@ public class HomeNearbyFragment extends Fragment implements ClinicView {
         adapter = new HomeNearbyAdapter(getContext(), tempList);
         clinicList.setAdapter(adapter);
     }
+
+    @Override
+    public void getClinicById(ClinicModel result) {
+
+    }
 }

@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dental.R;
 import com.example.dental.adapters.HomeMoreAdapter;
-import com.example.dental.adapters.HomeNearbyAdapter;
 import com.example.dental.models.ClinicModel;
 import com.example.dental.presenters.ClinicPresenter;
 import com.example.dental.views.ClinicView;
@@ -70,6 +69,11 @@ public class HomeMoreFragment extends Fragment implements ClinicView {
     }
 
     public void getNearbyClinics(List<ClinicModel> listResult) {
+
+    }
+
+    @Override
+    public void getClinicById(ClinicModel result) {
 
     }
 }

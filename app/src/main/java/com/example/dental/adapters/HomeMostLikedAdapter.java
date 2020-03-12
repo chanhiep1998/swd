@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.dental.activities.ClinicDetailActivity;
 import com.example.dental.R;
 import com.example.dental.models.ClinicModel;
-import com.example.dental.utils.ImageDownloader;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -42,7 +42,7 @@ public class HomeMostLikedAdapter extends RecyclerView.Adapter<HomeMostLikedAdap
         holder.clinicPrice.setText(String.format("%,d", clinicList.get(position).getPrice()) + " đ");
         holder.clinicDescription.setText(clinicList.get(position).getDescription());
         holder.clinicDiscount.setText(clinicList.get(position).getDiscountPercent() + "%");
-        new ImageDownloader(holder.clinicImage).execute(clinicList.get(position).getImage());
+        Picasso.get().load(clinicList.get(position).getImage()).into(holder.clinicImage);
     }
 
     @Override

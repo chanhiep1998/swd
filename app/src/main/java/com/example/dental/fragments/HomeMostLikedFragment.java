@@ -74,4 +74,9 @@ public class HomeMostLikedFragment extends Fragment implements ClinicView {
     public void getNearbyClinics(List<ClinicModel> listResult) {
 
     }
+
+    @Override
+    public void getClinicById(ClinicModel result) {
+
+    }
 }

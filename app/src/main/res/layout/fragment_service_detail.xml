@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:theme="@style/Theme.Dental"
     tools:context=".fragments.ServiceDetailFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -20,26 +20,36 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:background="@drawable/dental02">
 
                 <RelativeLayout
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/circle">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
                     <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginEnd="-1dp"
-                        android:layout_marginBottom="3dp"
-                        android:src="@drawable/back" />
+                        android:id="@+id/itemImage"
+                        android:layout_width="match_parent"
+                        android:scaleType="centerCrop"
+                        android:layout_height="match_parent" />
+
+                    <RelativeLayout
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/circle">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="-1dp"
+                            android:layout_marginBottom="3dp"
+                            android:src="@drawable/back" />
+                    </RelativeLayout>
                 </RelativeLayout>
             </LinearLayout>
 
@@ -66,7 +76,7 @@
                             android:background="@drawable/redtag" />
 
                         <TextView
-                            android:id="@+id/textView"
+                            android:id="@+id/itemDiscountTextView"
                             style="@style/Discount.Dental.Text"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -79,15 +89,27 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-
-                        <TextView
-                            android:id="@+id/textView2"
-                            android:layout_width="230dp"
+                        <LinearLayout
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Niềng răng 3D Clear Crystal"
-                            android:textColor="#000"
-                            android:textSize="24sp"
-                            android:textStyle="bold" />
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/itemDescriptionTextView"
+                                android:layout_width="230dp"
+                                android:layout_height="wrap_content"
+                                android:text="Niềng răng 3D Clear Crystal"
+                                android:textColor="#000"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/itemNameTextView"
+                                style="@style/ClinicNameSecondaryText.Dental.Text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Phoenix Dental" />
+                        </LinearLayout>
 
                         <View
                             android:layout_width="0dp"
@@ -101,6 +123,7 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/itemPriceTextView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="3.000.000 đ"
@@ -110,6 +133,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
+                                android:id="@+id/itemOldPriceTextView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="right"
@@ -122,12 +146,6 @@
 
                     </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/textView3"
-                        style="@style/ClinicNameSecondaryText.Dental.Text"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Phoenix Dental" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -165,36 +183,36 @@
                             android:textSize="16sp" />
                     </LinearLayout>
 
-                    <LinearLayout
+                    <!--                    <LinearLayout-->
 
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:orientation="horizontal">-->
 
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:background="@drawable/checked" />
+                    <!--                        <ImageView-->
+                    <!--                            android:layout_width="20dp"-->
+                    <!--                            android:layout_height="20dp"-->
+                    <!--                            android:background="@drawable/checked" />-->
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Đã có "
-                            android:textColor="@color/orange" />
+                    <!--                        <TextView-->
+                    <!--                            android:layout_width="wrap_content"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            android:text="Đã có "-->
+                    <!--                            android:textColor="@color/orange" />-->
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="3"
-                            android:textColor="@color/orange"
-                            android:textStyle="bold" />
+                    <!--                        <TextView-->
+                    <!--                            android:layout_width="wrap_content"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            android:text="3"-->
+                    <!--                            android:textColor="@color/orange"-->
+                    <!--                            android:textStyle="bold" />-->
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text=" người đặt chỗ cho hôm nay"
-                            android:textColor="@color/orange" />
-                    </LinearLayout>
+                    <!--                        <TextView-->
+                    <!--                            android:layout_width="wrap_content"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            android:text=" người đặt chỗ cho hôm nay"-->
+                    <!--                            android:textColor="@color/orange" />-->
+                    <!--                    </LinearLayout>-->
 
                     <Space
                         android:layout_width="match_parent"
@@ -270,8 +288,8 @@
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginVertical="10dp"
                             android:layout_marginHorizontal="5dp"
+                            android:layout_marginVertical="10dp"
                             android:background="@drawable/general_border"
                             android:orientation="horizontal"
                             android:padding="4dp">
@@ -281,19 +299,13 @@
                                 android:layout_height="24dp"
                                 android:background="@drawable/time" />
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="5dp"
-                                android:text="Chọn ngày"
-                                android:textColor="@color/grey"
-                                android:textSize="17sp" />
-
                             <Spinner
-                                android:id="@+id/spinner"
+                                android:id="@+id/spinner1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1" />
+                                android:translationX="10dp"
+                                android:entries="@array/date_array"
+                                android:prompt="@string/date_prompt" />
                         </LinearLayout>
 
                         <fragment
@@ -342,7 +354,9 @@
                         <TextView
                             android:id="@+id/policy"
                             android:layout_width="match_parent"
-                            android:layout_height="80dp"
+                            android:layout_height="60dp"
+                            android:maxHeight="200dp"
+                            android:maxLines="30"
                             android:text="@string/usingPolicy" />
 
                         <View
@@ -352,15 +366,14 @@
                             android:background="#eeeeee" />
 
                         <TextView
+                            android:id="@+id/showMoreTextView"
                             style="@style/VerifiedText.Dental.Text"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
-                            android:onClick="clickToShowMore"
                             android:text="Xem thêm"
                             android:textAlignment="center"
-                            android:textColor="@color/colorAccent"
-                            tools:ignore="OnClick" />
+                            android:textColor="@color/colorAccent" />
 
                         <Space
                             android:layout_width="match_parent"

@@ -11,19 +11,19 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.dental.activities.OrderActivity;
 import com.example.dental.R;
+import com.example.dental.activities.BookingDetailActivity;
 import com.example.dental.models.BookingTimeModel;
 
 import java.util.ArrayList;
 
 public class BookingTimeAdapter extends RecyclerView.Adapter<BookingTimeAdapter.RecyclerViewHolder> {
     private ArrayList<BookingTimeModel> bookingTimeModels;
-    private Context mContext;
+    private Context context;
 
-    public BookingTimeAdapter(Context mContext, ArrayList<BookingTimeModel> productModels) {
+    public BookingTimeAdapter(Context context, ArrayList<BookingTimeModel> productModels) {
         this.bookingTimeModels = productModels;
-        this.mContext = mContext;
+        this.context = context;
     }
 
     @NonNull
@@ -53,14 +53,15 @@ public class BookingTimeAdapter extends RecyclerView.Adapter<BookingTimeAdapter.
 
         public RecyclerViewHolder(View itemView) {
             super(itemView);
-            bookingTime = (TextView) itemView.findViewById(R.id.bookingTimeTextView);
-            bookingPrice = (TextView) itemView.findViewById(R.id.bookingPriceTextView);
-            bookingTimeContainer = (CardView) itemView.findViewById(R.id.bookingTimeContainer);
+            bookingTime = itemView.findViewById(R.id.bookingTimeTextView);
+            bookingPrice = itemView.findViewById(R.id.bookingPriceTextView);
+            bookingTimeContainer = itemView.findViewById(R.id.bookingTimeContainer);
             bookingTimeContainer.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(mContext, OrderActivity.class);
-                    mContext.startActivity(intent);
+                    Intent intent = new Intent(context, BookingDetailActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                    context.startActivity(intent);
                 }
             });
         }

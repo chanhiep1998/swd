@@ -4,9 +4,10 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="usingPolicy">
-    Extremely dangerous challenges: Challenges that pose an imminent risk of physical injury.
-Dangerous or threatening pranks: Pranks that lead victims to fear imminent serious physical danger, or that create serious emotional distress in minors.
-Instructions to kill or harm: Showing viewers how to perform activities meant to kill or maim others. For example, giving instructions to build a bomb meant to injure or kill others.
+    Nhập mã giảm giá hợp lệ tại trang thanh toán để được giảm giá.
+Mã giảm giá không được áp dụng chung với các chương trình khuyến mãi/giảm giá hoặc ưu đãi khác trừ khi có quy định riêng (VD: Về thời hạn sử dụng, giá trị giảm giá và loại dịch vụ áp dụng).
+Mã giảm giá không được quy đổi thành tiền mặt.
+Khách hàng sử dụng mã giảm giá sai mục đích hoặc vi phạm các điều khoản và điều kiện khuyến mãi sẽ bị từ chối việc sử dụng mã giảm giá của TOOSSHINY trong tương lai.
 
     </string>
 
@@ -74,5 +75,17 @@ Instructions to kill or harm: Showing viewers how to perform activities meant to
             "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
         <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
             "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
+    </string-array>
+
+
+    <string name="date_prompt">Chọn ngày</string>
+    <string-array name="date_array">
+        <item>Hôm nay (06/03/2020)</item>
+        <item>Thứ 7 (07/03/2020)</item>
+        <item>Chủ Nhật (08/03/2020)</item>
+        <item>Thứ 2 (09/03/2020)</item>
+        <item>Thứ 3 (10/03/2020)</item>
+        <item>Thứ 4 (11/03/2020)</item>
+        <item>Thứ 5 (12/03/2020)</item>
     </string-array>
 </resources>

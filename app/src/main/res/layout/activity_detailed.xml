@@ -4,15 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.DetailedActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".activities.DetailedActivity">
 
     <!-- TODO: Update blank fragment layout -->
-<com.google.android.material.appbar.AppBarLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <include layout="@layout/toolbar_layout"></include>
-</com.google.android.material.appbar.AppBarLayout>
+
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -25,26 +21,37 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/imageView"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:background="@drawable/dental06">
+                android:layout_height="180dp"
+                android:background="@drawable/banner3">
 
                 <RelativeLayout
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/circle">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
                     <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginEnd="-1dp"
-                        android:layout_marginBottom="3dp"
-                        android:src="@drawable/back" />
+                        android:id="@+id/itemImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop" />
+
+                    <RelativeLayout
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:onClick="clickToClose"
+                        android:background="@drawable/circle">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="-1dp"
+                            android:layout_marginBottom="3dp"
+                            android:src="@drawable/back" />
+                    </RelativeLayout>
                 </RelativeLayout>
             </LinearLayout>
 
@@ -81,18 +88,18 @@
 
 
                     <TextView
-                        android:id="@+id/textView2"
+                        android:id="@+id/clinicNameTextView"
                         style="@style/ClinicNameText.Dental.Text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Sylvia Dentist" />
+                        android:text="Nha Khoa Lan Anh" />
 
-                    <!--    <TextView-->
-                    <!--        android:id="@+id/textView3"-->
-                    <!--        android:layout_width="match_parent"-->
-                    <!--        android:layout_height="wrap_content"-->
-                    <!--        android:text="Khám răng, Niềng răng, Tẩy trắng răng"-->
-                    <!--        style="@style/ClinicNameSecondaryText.Dental.Text"/>-->
+                        <TextView
+                            android:id="@+id/clinicAddressTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Khám răng, Niềng răng, Tẩy trắng răng"
+                            style="@style/ClinicNameSecondaryText.Dental.Text"/>
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -151,7 +158,7 @@
                             android:background="@drawable/location" />
 
                         <TextView
-                            android:id="@+id/textView5"
+                            android:id="@+id/timeAndDistanceTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="3dp"
@@ -187,26 +194,37 @@
                         android:layout_marginRight="20dp"
                         android:orientation="vertical">
 
-                        <ImageView
-                            android:id="@+id/imageView2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/map" />
+<!--                        <ImageView-->
+<!--                            android:id="@+id/imageView2"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="150dp"-->
+<!--                            app:srcCompat="@drawable/map" />-->
+                        <fragment
+                            android:layout_marginVertical="20dp"
+                            android:id="@+id/map"
+                            android:name="com.google.android.gms.maps.SupportMapFragment"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginRight="20dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
                             android:orientation="horizontal">
 
                             <Button
-
-                                android:layout_width="125dp"
+                                android:id="@+id/dialButton"
+                                android:layout_width="170dp"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/border"
                                 android:text="Liên Lạc"
-                                android:textColor="@color/white" />
+                                android:drawableLeft="@android:drawable/stat_sys_phone_call"
+                                android:drawableTint="@color/colorAccent"
+                                android:onClick="clickToDial"
+                                android:gravity="center"
+                                android:textColor="@color/colorAccent"
+                                app:backgroundTint="#f2f2f2" />
 
                             <View
                                 android:layout_width="0dp"
@@ -214,16 +232,15 @@
                                 android:layout_weight="1" />
 
                             <Button
-
-                                android:layout_width="125dp"
+                                android:id="@+id/travelButton"
+                                android:layout_width="170dp"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/border"
-                                android:shadowColor="@color/white"
-                                android:shadowDx="0.0"
-                                android:shadowDy="0.0"
-                                android:shadowRadius="280"
                                 android:text="Chỉ Đường"
-                                android:textColor="@color/white" />
+                                android:drawableLeft="@drawable/ic_near_me_24px"
+                                android:drawableTint="@color/colorAccent"
+                                android:textColor="@color/colorAccent"
+                                android:onClick="clickToTravel"
+                                app:backgroundTint="#f2f2f2" />
                         </LinearLayout>
 
                         <TextView
@@ -269,17 +286,18 @@
                         </LinearLayout>
 
                         <View
-                            android:layout_marginTop="15dp"
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:background="#eeeeee"/>
+                            android:layout_marginTop="15dp"
+                            android:background="#eeeeee" />
+
                         <TextView
                             style="@style/VerifiedText.Dental.Text"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textAlignment="center"
                             android:layout_marginTop="10dp"
                             android:text="Xem toàn bộ thông tin"
+                            android:textAlignment="center"
                             android:textColor="@color/colorAccent" />
 
                         <Space
@@ -294,757 +312,31 @@
                     android:layout_width="match_parent"
                     android:layout_height="10dp" />
 
-                <androidx.cardview.widget.CardView
+                <fragment
+                    android:id="@+id/commentFragment"
+                    android:name="com.example.dental.fragments.CommentFragment"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:orientation="vertical">
-
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="25dp"
-                            android:layout_marginTop="10dp"
-                            android:text="Nhận Xét Đánh Giá"
-                            style="@style/ListTitle.Dental.Text" />
-
-                        <LinearLayout
-                            android:layout_marginTop="10dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="10dp"
-                                android:background="@color/white"
-                                android:orientation="horizontal">
-
-                                <de.hdodenhof.circleimageview.CircleImageView
-                                    android:layout_width="40dp"
-                                    android:layout_height="40dp"
-                                    app:civ_border_color="#FF000000"
-                                    app:civ_border_width="2dp"
-                                    android:layout_marginRight="10dp"
-                                    android:layout_marginBottom="10dp"
-                                    android:src="@drawable/user2" />
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="10dp"
-                                    android:orientation="vertical">
-
-                                    <LinearLayout
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:orientation="horizontal">
-
-                                        <androidx.appcompat.widget.AppCompatRatingBar
-                                            style="@style/RatingBar"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="match_parent"
-                                            android:numStars="5"
-                                            android:progressBackgroundTint="@color/grey"
-                                            android:progressTint="#FCDB09"
-                                            android:rating="5"
-                                            android:scaleX="1"
-                                            android:scaleY="1" />
-
-                                        <View
-                                            android:layout_width="0dp"
-                                            android:layout_height="0dp"
-                                            android:layout_weight="1" />
-
-                                        <TextView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:layout_marginLeft="3dp"
-                                            android:text="Hôm nay lúc 11:12"
-                                            android:textColor="@color/grey"
-                                            android:textSize="12sp" />
-                                    </LinearLayout>
-
-
-                                    <LinearLayout
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:orientation="horizontal">
-
-                                        <TextView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:text="bởi "
-                                            android:textColor="@color/grey"
-                                            android:textSize="10sp" />
-
-                                        <TextView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:text="Đào Sỹ Trung Kiên"
-                                            android:textColor="#000"
-                                            android:textSize="14sp"
-                                            android:textStyle="bold" />
-                                    </LinearLayout>
-
-                                    <LinearLayout
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:orientation="horizontal">
-
-                                        <ImageView
-                                            android:layout_width="12dp"
-                                            android:layout_height="12dp"
-                                            android:layout_marginTop="2dp"
-                                            android:background="@drawable/location2" />
-
-                                        <TextView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:text="88C Tô Ngọc Vân, Thạnh Lộc, Quận 12, Hồ Chì Mính"
-                                            android:textSize="12sp" />
-
-                                    </LinearLayout>
-
-                                </LinearLayout>
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp">
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="Nha sĩ dễ thương thân thiện. Dịch vụ tốt!"
-                                    android:textColor="#5E5E5E" />
-                            </LinearLayout>
-                        </LinearLayout>
-
-                        <View
-                            android:layout_marginTop="10dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="#eeeeee" />
-
-                        <LinearLayout
-                            android:layout_marginVertical="5dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="10dp"
-                                android:background="@color/white"
-                                android:orientation="horizontal">
-
-                                <de.hdodenhof.circleimageview.CircleImageView
-                                    android:layout_width="40dp"
-                                    android:layout_height="40dp"
-                                    app:civ_border_color="#FF000000"
-                                    app:civ_border_width="2dp"
-                                    android:layout_marginRight="10dp"
-                                    android:layout_marginBottom="10dp"
-                                    android:src="@drawable/user3" />
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="10dp"
-                                    android:orientation="vertical">
-
-                                    <LinearLayout
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:orientation="horizontal">
-
-                                        <androidx.appcompat.widget.AppCompatRatingBar
-                                            style="@style/RatingBar"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="match_parent"
-                                            android:numStars="5"
-                                            android:progressBackgroundTint="@color/grey"
-                                            android:progressTint="#FCDB09"
-                                            android:rating="4.5"
-                                            android:scaleX="1"
-                                            android:scaleY="1" />
-
-                                        <View
-                                            android:layout_width="0dp"
-                                            android:layout_height="0dp"
-                                            android:layout_weight="1" />
-
-                                        <TextView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:layout_marginLeft="3dp"
-                                            android:text="Hôm qua lúc 18:00"
-                                            android:textColor="@color/grey"
-                                            android:textSize="12sp" />
-                                    </LinearLayout>
-
-
-                                    <LinearLayout
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:orientation="horizontal">
-
-                                        <TextView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:text="bởi "
-                                            android:textColor="@color/grey"
-                                            android:textSize="10sp" />
-
-                                        <TextView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:text="Kage Narumono"
-                                            android:textColor="#000"
-                                            android:textSize="14sp"
-                                            android:textStyle="bold" />
-                                    </LinearLayout>
-
-                                    <LinearLayout
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:orientation="horizontal">
-
-                                        <ImageView
-                                            android:layout_width="12dp"
-                                            android:layout_height="12dp"
-                                            android:layout_marginTop="2dp"
-                                            android:background="@drawable/location2" />
-
-                                        <TextView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:text="Bình Thạnh, Hồ Chì Mính"
-                                            android:textSize="12sp" />
-
-                                    </LinearLayout>
-
-                                </LinearLayout>
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp">
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="Phòng khám chuyên nhiệp, thiết bị đầy đủ."
-                                    android:textColor="#5E5E5E" />
-                            </LinearLayout>
-                        </LinearLayout>
-
-                        <View
-                            android:layout_marginTop="10dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="#eeeeee" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginVertical="5dp"
-                            android:orientation="vertical">
-
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="10dp"
-                                android:background="@color/white"
-                                android:orientation="horizontal">
-
-                                <de.hdodenhof.circleimageview.CircleImageView
-                                    android:layout_width="40dp"
-                                    android:layout_height="40dp"
-                                    app:civ_border_color="#FF000000"
-                                    app:civ_border_width="2dp"
-                                    android:layout_marginRight="10dp"
-                                    android:layout_marginBottom="10dp"
-                                    android:src="@drawable/user1" />
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="10dp"
-                                    android:orientation="vertical">
-
-                                    <LinearLayout
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:orientation="horizontal">
-
-                                        <androidx.appcompat.widget.AppCompatRatingBar
-                                            style="@style/RatingBar"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="match_parent"
-                                            android:numStars="5"
-                                            android:progressBackgroundTint="@color/grey"
-                                            android:progressTint="#FCDB09"
-                                            android:rating="3.5"
-                                            android:scaleX="1"
-                                            android:scaleY="1" />
-
-                                        <View
-                                            android:layout_width="0dp"
-                                            android:layout_height="0dp"
-                                            android:layout_weight="1" />
-
-                                        <TextView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:layout_marginLeft="3dp"
-                                            android:text="Hôm qua lúc 13:20"
-                                            android:textColor="@color/grey"
-                                            android:textSize="12sp" />
-                                    </LinearLayout>
-
-
-                                    <LinearLayout
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:orientation="horizontal">
-
-                                        <TextView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:text="bởi "
-                                            android:textColor="@color/grey"
-                                            android:textSize="10sp" />
-
-                                        <TextView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:text="Hudson Felix"
-                                            android:textColor="#000"
-                                            android:textSize="14sp"
-                                            android:textStyle="bold" />
-                                    </LinearLayout>
-
-                                    <LinearLayout
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:orientation="horizontal">
-
-                                        <ImageView
-                                            android:layout_width="12dp"
-                                            android:layout_height="12dp"
-                                            android:layout_marginTop="2dp"
-                                            android:background="@drawable/location2" />
-
-                                        <TextView
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:text="Tân Phú, Hồ Chì Mính"
-                                            android:textSize="12sp" />
-
-                                    </LinearLayout>
-
-                                </LinearLayout>
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp">
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="Tốt!"
-                                    android:textColor="#5E5E5E" />
-                            </LinearLayout>
-                        </LinearLayout>
-
-                        <Space
-                            android:layout_width="match_parent"
-                            android:layout_height="10dp" />
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                    android:layout_height="wrap_content" />
 
                 <Space
                     android:layout_width="match_parent"
                     android:layout_height="10dp" />
 
-                <androidx.cardview.widget.CardView
+                <fragment
+                    android:id="@+id/clinicFragmentPromotion"
+                    android:name="com.example.dental.fragments.ClinicPromotionFragment"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:orientation="vertical">
-
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="25dp"
-                            android:layout_marginTop="10dp"
-                            android:text="Khuyến Mãi"
-                            style="@style/ListTitle.Dental.Text" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:background="@color/white"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="128dp"
-                                android:layout_height="128dp"
-                                android:scaleType="centerCrop"
-                                app:srcCompat="@drawable/dental01" />
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:orientation="vertical">
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Nhổ răng"
-                                        android:textColor="#000"
-                                        android:textSize="20sp"
-                                        android:textStyle="bold" />
-
-                                    <View
-                                        android:layout_width="0dp"
-                                        android:layout_height="0dp"
-                                        android:layout_weight="1"/>
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="200.000 đ"
-                                        style="@style/ListTitle.Dental.Text"/>
-
-
-                                </LinearLayout>
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="Cơ hội giảm 30% khi đi vào những này trong tuần"
-                                    android:textColor="@color/quantum_googred300"
-                                    android:textSize="14sp" />
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="#eeeeee" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:background="@color/white"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="128dp"
-                                android:layout_height="128dp"
-                                android:scaleType="centerCrop"
-                                app:srcCompat="@drawable/dental04" />
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="Nhổ răng"
-                                    android:textColor="#000"
-                                    android:textSize="20sp"
-                                    android:textStyle="bold" />
-
-
-                                <View
-                                    android:layout_width="match_parent"
-                                    android:layout_height="20dp" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text=""
-                                    android:textColor="@color/quantum_googred300"
-                                    android:textSize="14sp" />
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="#eeeeee" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:background="@color/white"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="128dp"
-                                android:layout_height="128dp"
-                                android:scaleType="centerCrop"
-                                app:srcCompat="@drawable/dental06" />
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="Shiroha Dental"
-                                    android:textColor="#000"
-                                    android:textSize="20sp"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="Nhiều dịch vụ"
-                                    android:textSize="14sp" />
-
-                                <View
-                                    android:layout_width="match_parent"
-                                    android:layout_height="20dp" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="Giảm 30% khi cùng bé đi chăm sóc răng miệng"
-                                    android:textColor="@color/quantum_googred300"
-                                    android:textSize="14sp" />
-                            </LinearLayout>
-
-                        </LinearLayout>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                    android:layout_height="wrap_content" />
 
                 <Space
                     android:layout_width="match_parent"
                     android:layout_height="10dp" />
 
-                <androidx.cardview.widget.CardView
+                <fragment
+                    android:id="@+id/clinicFragmentServicePack"
+                    android:name="com.example.dental.fragments.ClinicServicePackFragment"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:orientation="vertical">
-
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="25dp"
-                            android:layout_marginTop="10dp"
-                            android:text="Dịch vụ theo gói"
-                            style="@style/ListTitle.Dental.Text" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:background="@color/white"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="128dp"
-                                android:layout_height="128dp"
-                                android:scaleType="centerCrop"
-                                app:srcCompat="@drawable/dental01" />
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="Quantum Clinic"
-                                    android:textColor="#000"
-                                    android:textSize="20sp"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="Niềng răng Invisalign – Cấp 1 "
-                                    android:textSize="14sp" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="Gần bạn"
-                                    android:textSize="14sp"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="Cơ hội giảm 30% khi đi vào những này trong tuần"
-                                    android:textColor="@color/quantum_googred300"
-                                    android:textSize="14sp" />
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="#eeeeee" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:background="@color/white"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="128dp"
-                                android:layout_height="128dp"
-                                android:scaleType="centerCrop"
-                                app:srcCompat="@drawable/dental04" />
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="Shine Teeth"
-                                    android:textColor="#000"
-                                    android:textSize="20sp"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="Nhiều dịch vụ"
-                                    android:textSize="14sp" />
-
-                                <View
-                                    android:layout_width="match_parent"
-                                    android:layout_height="20dp" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="Giảm 50% khi sử dụng dịch vụ khám tổng quát và cạo vôi răng"
-                                    android:textColor="@color/quantum_googred300"
-                                    android:textSize="14sp" />
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="#eeeeee" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:background="@color/white"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="128dp"
-                                android:layout_height="128dp"
-                                android:scaleType="centerCrop"
-                                app:srcCompat="@drawable/dental06" />
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="Shiroha Dental"
-                                    android:textColor="#000"
-                                    android:textSize="20sp"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="Nhiều dịch vụ"
-                                    android:textSize="14sp" />
-
-                                <View
-                                    android:layout_width="match_parent"
-                                    android:layout_height="20dp" />
-
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="Giảm 30% khi cùng bé đi chăm sóc răng miệng"
-                                    android:textColor="@color/quantum_googred300"
-                                    android:textSize="14sp" />
-                            </LinearLayout>
-
-                        </LinearLayout>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                    android:layout_height="wrap_content" />
             </LinearLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

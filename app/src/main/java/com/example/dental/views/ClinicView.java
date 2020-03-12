@@ -9,4 +9,5 @@ public interface ClinicView {
     void getMostLikedClinics(List<ClinicModel> listResult);
     void getMostDiscountClinics(List<ClinicModel> listResult);
     void getNearbyClinics(List<ClinicModel> listResult);
+    void getClinicById(ClinicModel result);
 }
