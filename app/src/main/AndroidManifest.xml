@@ -31,7 +31,6 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".activities.BookingDetailActivity" />
         <activity android:name=".activities.BookingActivity" />
         <activity android:name=".activities.TravelActivity" />
         <activity android:name=".activities.OrderActivity" />
@@ -57,6 +56,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.BookingSummary">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.BookingDetailActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

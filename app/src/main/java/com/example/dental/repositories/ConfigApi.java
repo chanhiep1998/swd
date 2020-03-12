@@ -2,7 +2,7 @@ package com.example.dental.repositories;
 
 public class ConfigApi {
 
-    public static final String BASE_URL = "http://10.0.2.2:4000/";
+    public static final String BASE_URL = "http://10.0.3.2:4000/";
 
 
 

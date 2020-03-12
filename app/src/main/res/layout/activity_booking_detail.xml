@@ -259,8 +259,7 @@
                             app:layout_constraintTop_toTopOf="@+id/view"
                             app:layout_constraintVertical_bias="0.296" />
 
-                        <Button
-
+                        <androidx.appcompat.widget.AppCompatButton
                             android:onClick="clickToTravelFromNotification"
                             android:id="@+id/button2"
                             android:layout_width="170dp"
@@ -278,8 +277,7 @@
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent" />
 
-                        <Button
-                            android:onClick="clickToDialFromNotification"
+                        <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/button"
                             android:layout_width="170dp"
                             android:layout_height="wrap_content"
@@ -287,6 +285,7 @@
                             android:layout_marginBottom="8dp"
                             android:drawableLeft="@android:drawable/stat_sys_phone_call"
                             android:drawableTint="@color/colorAccent"
+                            android:onClick="clickToDialFromNotification"
                             android:paddingLeft="15dp"
                             android:paddingRight="3dp"
                             android:text="Gọi phòng khám"
@@ -304,7 +303,7 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <Button
-                    android:id="@+id/button3"
+                    android:id="@+id/activity_booking_detail_btnHuy"
                     android:layout_width="380dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"

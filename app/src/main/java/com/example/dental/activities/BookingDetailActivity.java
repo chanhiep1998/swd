@@ -12,6 +12,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,6 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import com.example.dental.R;
+import com.example.dental.activities.thaotest.LoadingCancelDialog;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -46,6 +48,8 @@ public class BookingDetailActivity extends AppCompatActivity implements OnMapRea
 
     private static final int MY_PERMISSIONS_REQUEST_READ_CONTACTS = 1;
 
+    Button cancelButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +59,18 @@ public class BookingDetailActivity extends AppCompatActivity implements OnMapRea
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         clinicAddress = findViewById(R.id.clinicAddressTextView);
+        cancelButton = findViewById(R.id.activity_booking_detail_btnHuy);
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LoadingCancelDialog loading = new LoadingCancelDialog(BookingDetailActivity.this);
+                loading.startDialog();
+            }
+        });
+    }
+
+    public Button getCancelButton() {
+        return this.cancelButton;
     }
 
     @Override

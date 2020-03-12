@@ -319,6 +319,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
+                android:layout_marginBottom="25dp"
                 android:padding="16dp">
 
                 <TextView
