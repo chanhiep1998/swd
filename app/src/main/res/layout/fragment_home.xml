@@ -111,26 +111,36 @@
                 android:layout_height="10dp" />
 
 
-            <fragment
-                android:id="@+id/clinicFragmentNearby"
-                android:name="com.example.dental.fragments.HomeNearbyFragment"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+<!--            <fragment-->
+<!--                android:id="@+id/clinicFragmentRecommended"-->
+<!--                android:name="com.example.dental.fragments.HomeRecommendedFragment"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content" />-->
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
+<!--            <Space-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="10dp" />-->
 
-            <fragment
-                android:id="@+id/clinicFragmentMostDiscount"
-                android:name="com.example.dental.fragments.HomeMostDiscountFragment"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+<!--            <fragment-->
+<!--                android:id="@+id/clinicFragmentNearby"-->
+<!--                android:name="com.example.dental.fragments.HomeNearbyFragment"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content" />-->
+
+<!--            <Space-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="10dp" />-->
+
+<!--            <fragment-->
+<!--                android:id="@+id/clinicFragmentMostDiscount"-->
+<!--                android:name="com.example.dental.fragments.HomeMostDiscountFragment"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content" />-->
 
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
+<!--            <Space-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="10dp" />-->
 
             <fragment
                 android:id="@+id/clinicFragmentMostLiked"

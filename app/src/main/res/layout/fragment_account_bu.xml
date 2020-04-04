@@ -65,7 +65,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Kage Narumono"
+                android:text="
+Trần Thiên Thảo
+"
                 android:textColor="#000"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -119,7 +121,9 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Kage Narumono" />
+                        android:text="
+Trần Thiên Thảo
+" />
                 </LinearLayout>
 
                 <View

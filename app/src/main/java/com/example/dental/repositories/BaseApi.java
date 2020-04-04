@@ -1,5 +1,7 @@
 package com.example.dental.repositories;
 
+import android.app.AlertDialog;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 

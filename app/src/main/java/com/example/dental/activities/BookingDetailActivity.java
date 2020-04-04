@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -49,6 +50,7 @@ public class BookingDetailActivity extends AppCompatActivity implements OnMapRea
     private static final int MY_PERMISSIONS_REQUEST_READ_CONTACTS = 1;
 
     Button cancelButton;
+    ImageView cancelImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +62,7 @@ public class BookingDetailActivity extends AppCompatActivity implements OnMapRea
         mapFragment.getMapAsync(this);
         clinicAddress = findViewById(R.id.clinicAddressTextView);
         cancelButton = findViewById(R.id.activity_booking_detail_btnHuy);
+        cancelImageView = findViewById(R.id.cancelBookingImageView);
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,6 +74,10 @@ public class BookingDetailActivity extends AppCompatActivity implements OnMapRea
 
     public Button getCancelButton() {
         return this.cancelButton;
+    }
+
+    public ImageView getCancelImageView() {
+        return this.cancelImageView;
     }
 
     @Override

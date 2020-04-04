@@ -11,9 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dental.R;
 import com.example.dental.adapters.HomeDiscountAdapter;
-import com.example.dental.adapters.HomeNearbyAdapter;
-import com.example.dental.blocs.DiscountBloc;
 import com.example.dental.models.ClinicModel;
+import com.example.dental.models.ClinicModel;
+import com.example.dental.models.ServiceModel;
 import com.example.dental.presenters.ClinicPresenter;
 import com.example.dental.views.ClinicView;
 
@@ -29,7 +29,7 @@ public class HomeMostDiscountFragment extends Fragment implements ClinicView {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_clinic_most_discount_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_clinic_most_discount_list, container, false);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
 
@@ -43,12 +43,18 @@ public class HomeMostDiscountFragment extends Fragment implements ClinicView {
     }
 
     @Override
-    public void getAllClinic(List<ClinicModel> listResult) {
+    public void getAllClinics(List<ClinicModel> listResult) {
 
     }
 
     @Override
-    public void getMostLikedClinics(List<ClinicModel> listResult) {
+    public void getAllServices(List<ServiceModel> listResult) {
+
+    }
+
+    @Override
+    public void getServicesByClinicId(List<ServiceModel> listResult) {
+
 
     }
 
@@ -58,6 +64,7 @@ public class HomeMostDiscountFragment extends Fragment implements ClinicView {
         for (ClinicModel item : listResult) {
             ClinicModel clinic = new ClinicModel();
             clinic.setId(item.getId());
+//            clinic.setServiceRating(item.getServiceRating());
             clinic.setName(item.getName());
             clinic.setDescription(item.getDescription());
             clinic.setOldPrice(item.getOldPrice());
@@ -78,6 +85,11 @@ public class HomeMostDiscountFragment extends Fragment implements ClinicView {
 
     @Override
     public void getClinicById(ClinicModel result) {
+
+    }
+
+    @Override
+    public void getClinicByIdNew(ClinicModel result) {
 
     }
 }

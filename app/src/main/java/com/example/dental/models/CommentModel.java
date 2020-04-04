@@ -11,13 +11,13 @@ public class CommentModel implements Serializable {
     public CommentModel() {
     }
 
-    public CommentModel(String userName, String userImage, String comment, String userPosition, String commentTime, float serviceRateing) {
+    public CommentModel(String userName, String userImage, String comment, String userPosition, String commentTime, float serviceRating) {
         this.userName = userName;
         this.userImage = userImage;
         this.comment = comment;
         this.userPosition = userPosition;
         this.commentTime = commentTime;
-        this.serviceRating = serviceRateing;
+        this.serviceRating = serviceRating;
     }
 
     public String getUserName() {

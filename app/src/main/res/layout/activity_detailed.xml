@@ -40,8 +40,8 @@
                         android:layout_height="30dp"
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="10dp"
-                        android:onClick="clickToClose"
-                        android:background="@drawable/circle">
+                        android:background="@drawable/circle"
+                        android:onClick="clickToClose">
 
                         <ImageView
                             android:layout_width="24dp"
@@ -53,34 +53,34 @@
                             android:src="@drawable/back" />
                     </RelativeLayout>
 
-<!--                    <RelativeLayout-->
-<!--                        android:layout_width="30dp"-->
-<!--                        android:layout_height="30dp"-->
-<!--                        android:layout_alignParentRight="true"-->
-<!--                        android:layout_marginHorizontal="20dp"-->
-<!--                        android:layout_marginTop="10dp"-->
-<!--                        android:onClick="clickToClose"-->
-<!--                        android:background="@drawable/circle">-->
+                    <!--                    <RelativeLayout-->
+                    <!--                        android:layout_width="30dp"-->
+                    <!--                        android:layout_height="30dp"-->
+                    <!--                        android:layout_alignParentRight="true"-->
+                    <!--                        android:layout_marginHorizontal="20dp"-->
+                    <!--                        android:layout_marginTop="10dp"-->
+                    <!--                        android:onClick="clickToClose"-->
+                    <!--                        android:background="@drawable/circle">-->
 
-<!--                        <ImageView-->
-<!--                            android:layout_width="20dp"-->
-<!--                            android:layout_height="20dp"-->
-<!--                            android:layout_alignParentEnd="true"-->
-<!--                            android:layout_alignParentBottom="true"-->
-<!--                            android:layout_marginEnd="4dp"-->
-<!--                            android:layout_marginBottom="4dp"-->
-<!--                            android:src="@drawable/ic_message_24px"-->
-<!--                            android:tint="@color/white" />-->
-<!--                    </RelativeLayout>-->
+                    <!--                        <ImageView-->
+                    <!--                            android:layout_width="20dp"-->
+                    <!--                            android:layout_height="20dp"-->
+                    <!--                            android:layout_alignParentEnd="true"-->
+                    <!--                            android:layout_alignParentBottom="true"-->
+                    <!--                            android:layout_marginEnd="4dp"-->
+                    <!--                            android:layout_marginBottom="4dp"-->
+                    <!--                            android:src="@drawable/ic_message_24px"-->
+                    <!--                            android:tint="@color/white" />-->
+                    <!--                    </RelativeLayout>-->
 
                     <RelativeLayout
                         android:layout_width="30dp"
-                        android:layout_alignParentRight="true"
                         android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
                         android:layout_marginHorizontal="20dp"
                         android:layout_marginTop="10dp"
-                        android:onClick="clickToClose"
-                        android:background="@drawable/circle">
+                        android:background="@drawable/circle"
+                        android:onClick="clickToSearchService">
 
                         <ImageView
                             android:layout_width="24dp"
@@ -107,24 +107,24 @@
                     android:layout_marginRight="20dp"
                     android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp">
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="10dp">-->
 
-                        <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:background="@drawable/checked" />
+<!--                        <ImageView-->
+<!--                            android:layout_width="24dp"-->
+<!--                            android:layout_height="24dp"-->
+<!--                            android:background="@drawable/checked" />-->
 
-                        <TextView
-                            android:id="@+id/textView"
-                            style="@style/VerifiedText.Dental.Text"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:text="Gần bạn" />
-                    </LinearLayout>
+<!--                        <TextView-->
+<!--                            android:id="@+id/textView"-->
+<!--                            style="@style/VerifiedText.Dental.Text"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginLeft="5dp"-->
+<!--                            android:text="Gần bạn" />-->
+<!--                    </LinearLayout>-->
 
 
                     <TextView
@@ -134,12 +134,12 @@
                         android:layout_height="wrap_content"
                         android:text="Nha Khoa Lan Anh" />
 
-                        <TextView
-                            android:id="@+id/clinicAddressTextView"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Khám răng, Niềng răng, Tẩy trắng răng"
-                            style="@style/ClinicNameSecondaryText.Dental.Text"/>
+                    <TextView
+                        android:id="@+id/clinicAddressTextView"
+                        style="@style/ClinicNameSecondaryText.Dental.Text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Khám răng, Niềng răng, Tẩy trắng răng" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -147,50 +147,50 @@
                         android:layout_marginTop="10dp"
                         android:orientation="horizontal">
 
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:orientation="horizontal">-->
 
-                            <TextView
-                                android:id="@+id/textView4"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="4.5"
-                                android:textColor="#000"
-                                android:textSize="22sp"
-                                android:textStyle="bold" />
+<!--                            <TextView-->
+<!--                                android:id="@+id/textView4"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:text="4.5"-->
+<!--                                android:textColor="#000"-->
+<!--                                android:textSize="22sp"-->
+<!--                                android:textStyle="bold" />-->
 
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="3dp"
-                                android:orientation="vertical">
+<!--                            <LinearLayout-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginLeft="3dp"-->
+<!--                                android:orientation="vertical">-->
 
-                                <androidx.appcompat.widget.AppCompatRatingBar
-                                    style="@style/RatingBar"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:numStars="5"
-                                    android:progressBackgroundTint="@color/grey"
-                                    android:progressTint="#FCDB09"
-                                    android:rating="4.5"
-                                    android:scaleX="1"
-                                    android:scaleY="1" />
+<!--                                <androidx.appcompat.widget.AppCompatRatingBar-->
+<!--                                    style="@style/RatingBar"-->
+<!--                                    android:layout_width="wrap_content"-->
+<!--                                    android:layout_height="match_parent"-->
+<!--                                    android:numStars="5"-->
+<!--                                    android:progressBackgroundTint="@color/grey"-->
+<!--                                    android:progressTint="#FCDB09"-->
+<!--                                    android:rating="4.5"-->
+<!--                                    android:scaleX="1"-->
+<!--                                    android:scaleY="1" />-->
 
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="60 đánh giá"
-                                    android:textSize="10sp" />
-                            </LinearLayout>
+<!--                                <TextView-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:text="60 đánh giá"-->
+<!--                                    android:textSize="10sp" />-->
+<!--                            </LinearLayout>-->
 
 
-                        </LinearLayout>
+<!--                        </LinearLayout>-->
 
-                        <Space
-                            android:layout_width="30dp"
-                            android:layout_height="match_parent" />
+<!--                        <Space-->
+<!--                            android:layout_width="30dp"-->
+<!--                            android:layout_height="match_parent" />-->
 
                         <ImageView
                             android:layout_width="15dp"
@@ -234,18 +234,17 @@
                         android:layout_marginRight="20dp"
                         android:orientation="vertical">
 
-<!--                        <ImageView-->
-<!--                            android:id="@+id/imageView2"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="150dp"-->
-<!--                            app:srcCompat="@drawable/map" />-->
+                        <!--                        <ImageView-->
+                        <!--                            android:id="@+id/imageView2"-->
+                        <!--                            android:layout_width="match_parent"-->
+                        <!--                            android:layout_height="150dp"-->
+                        <!--                            app:srcCompat="@drawable/map" />-->
                         <fragment
-                            android:layout_marginVertical="20dp"
                             android:id="@+id/map"
                             android:name="com.google.android.gms.maps.SupportMapFragment"
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
-                            />
+                            android:layout_marginVertical="20dp" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -258,11 +257,11 @@
                                 android:id="@+id/dialButton"
                                 android:layout_width="170dp"
                                 android:layout_height="wrap_content"
-                                android:text="Liên Lạc"
                                 android:drawableLeft="@android:drawable/stat_sys_phone_call"
                                 android:drawableTint="@color/colorAccent"
-                                android:onClick="clickToDial"
                                 android:gravity="center"
+                                android:onClick="clickToDial"
+                                android:text="Liên Lạc"
                                 android:textColor="@color/colorAccent"
                                 app:backgroundTint="#f2f2f2" />
 
@@ -275,11 +274,11 @@
                                 android:id="@+id/travelButton"
                                 android:layout_width="170dp"
                                 android:layout_height="wrap_content"
-                                android:text="Chỉ Đường"
                                 android:drawableLeft="@drawable/ic_near_me_24px"
                                 android:drawableTint="@color/colorAccent"
-                                android:textColor="@color/colorAccent"
                                 android:onClick="clickToTravel"
+                                android:text="Chỉ Đường"
+                                android:textColor="@color/colorAccent"
                                 app:backgroundTint="#f2f2f2" />
                         </LinearLayout>
 
@@ -332,12 +331,22 @@
                             android:background="#eeeeee" />
 
                         <TextView
+                            android:id="@+id/textClinicDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:maxHeight="200dp"
+                            android:text="@string/clinic_description" />
+
+
+                        <TextView
+                            android:id="@+id/showAllTextView"
                             style="@style/VerifiedText.Dental.Text"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:text="Xem toàn bộ thông tin"
                             android:textAlignment="center"
+                            android:onClick="clickToShowMore"
                             android:textColor="@color/colorAccent" />
 
                         <Space
@@ -352,15 +361,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="10dp" />
 
-                <fragment
-                    android:id="@+id/commentFragment"
-                    android:name="com.example.dental.fragments.CommentFragment"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+<!--                <fragment-->
+<!--                    android:id="@+id/commentFragment"-->
+<!--                    android:name="com.example.dental.fragments.CommentFragment"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content" />-->
 
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp" />
+<!--                <Space-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="10dp" />-->
 
                 <fragment
                     android:id="@+id/clinicFragmentPromotion"
@@ -372,11 +381,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="10dp" />
 
-                <fragment
-                    android:id="@+id/clinicFragmentServicePack"
-                    android:name="com.example.dental.fragments.ClinicServicePackFragment"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+<!--                <fragment-->
+<!--                    android:id="@+id/clinicFragmentServicePack"-->
+<!--                    android:name="com.example.dental.fragments.ClinicServicePackFragment"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content" />-->
             </LinearLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

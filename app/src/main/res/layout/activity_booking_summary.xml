@@ -33,14 +33,14 @@
                     android:id="@+id/textView20"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat"
-                    android:text="XÁC NHẬN ĐẶT HẸN"
                     android:layout_centerInParent="true"
+                    android:fontFamily="@font/montserrat"
                     android:padding="5dp"
                     android:shadowColor="@color/colorAccent"
                     android:shadowDx="0.0"
                     android:shadowDy="0.0"
                     android:shadowRadius="1"
+                    android:text="XÁC NHẬN ĐẶT HẸN"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="@color/colorAccent"
                     android:textStyle="bold" />
@@ -71,9 +71,77 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:background="@color/white"
                     android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/textPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat"
+                        android:text="100.000 đ"
+                        android:textColor="#e62e00"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/textView39"
+                        app:layout_constraintTop_toBottomOf="@+id/textView39" />
+
+                    <TextView
+                        android:id="@+id/textView39"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="Giá còn"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/divider7" />
+
+                    <View
+                        android:id="@+id/divider7"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="112dp"
+                        android:background="#f2f2f2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textDateAndTime" />
+
+                    <TextView
+                        android:id="@+id/textView14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="Giá gốc"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView35" />
+
+                    <TextView
+                        android:id="@+id/textOldPrice"
+                        android:layout_width="86dp"
+                        android:layout_height="19dp"
+                        android:layout_marginStart="40dp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="200.000 đ"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+                    <View
+                        android:id="@+id/divider6"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="56dp"
+                        android:background="#f2f2f2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textDateAndTime" />
 
                     <TextView
                         android:id="@+id/textView30"
@@ -88,11 +156,11 @@
                         app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
                     <TextView
-                        android:id="@+id/textView32"
+                        android:id="@+id/textDateAndTime"
                         android:layout_width="270dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/montserrat"
-                        android:text="05:30 PM, 04/03/2020"
+                        android:text="2:15 PM, Thứ ba 25/02/2020"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="@+id/textView30"
                         app:layout_constraintTop_toBottomOf="@+id/textView30" />
@@ -104,7 +172,7 @@
                         android:layout_marginTop="8dp"
                         android:background="#f2f2f2"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView29" />
+                        app:layout_constraintTop_toBottomOf="@+id/textAddress" />
 
                     <TextView
                         android:id="@+id/textView27"
@@ -119,11 +187,11 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/textView34"
+                        android:id="@+id/textService"
                         android:layout_width="270dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/montserrat"
-                        android:text="Khám tổng quát"
+                        android:text="Trám răng"
                         android:textSize="15sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="@+id/textView28"
@@ -136,14 +204,14 @@
                         android:layout_marginTop="8dp"
                         android:background="#f2f2f2"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView34" />
+                        app:layout_constraintTop_toBottomOf="@+id/textService" />
 
                     <TextView
-                        android:id="@+id/textView29"
+                        android:id="@+id/textAddress"
                         android:layout_width="280dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/montserrat"
-                        android:text="238 Phan Xích Long, P.7, Q. Phú Nhuận, TP.HCM"
+                        android:text="230/9 Huỳnh Văn Bánh, Phường 11, Phú Nhuận, Hồ Chí Minh, Vietnam"
                         android:textSize="15sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="@+id/textView27"
@@ -169,7 +237,7 @@
                         android:layout_marginTop="8dp"
                         android:background="#f2f2f2"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView32" />
+                        app:layout_constraintTop_toBottomOf="@+id/textDateAndTime" />
 
                     <TextView
                         android:id="@+id/textView33"
@@ -188,11 +256,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/montserrat"
-                        android:text="-5%"
+                        android:text="-50%"
                         android:textColor="#e62e00"
                         android:textSize="15sp"
+                        android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="@+id/textView33"
                         app:layout_constraintTop_toBottomOf="@+id/textView33" />
+
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -244,7 +314,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/divider5" />
 
                     <TextView
-                        android:id="@+id/textView21"
+                        android:id="@+id/textUserEmail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/montserrat"
@@ -253,7 +323,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
                     <TextView
-                        android:id="@+id/textView100"
+                        android:id="@+id/textUserPhone"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/montserrat"
@@ -273,7 +343,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/textView18"
+                        android:id="@+id/textUserName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Trần Thiên Thảo"
@@ -300,7 +370,7 @@
                         android:layout_marginTop="5dp"
                         android:background="?android:attr/listDivider"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+                        app:layout_constraintTop_toBottomOf="@+id/textUserName" />
 
                     <View
                         android:id="@+id/divider5"
@@ -310,7 +380,7 @@
                         android:layout_marginTop="5dp"
                         android:background="?android:attr/listDivider"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView100" />
+                        app:layout_constraintTop_toBottomOf="@+id/textUserPhone" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -365,6 +435,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/textView26" />
                 </com.google.android.material.card.MaterialCardView>
             </androidx.constraintlayout.widget.ConstraintLayout>
+
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

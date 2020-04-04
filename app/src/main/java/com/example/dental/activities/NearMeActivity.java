@@ -183,7 +183,7 @@ public class NearMeActivity extends AppCompatActivity implements OnMapReadyCallb
             userLatLgn = userLocation;
 
             userMarker = mMap.addMarker(new MarkerOptions().position(userLocation).title("Bạn đang ở đây"));
-
+            Toast.makeText(getApplicationContext(), userLatLgn.toString(), Toast.LENGTH_LONG).show();
             CameraPosition cameraPosition = new CameraPosition.Builder()
                     .target(userLocation)
                     .zoom(16)                   // Sets the zoom

@@ -1,18 +1,21 @@
 package com.example.dental.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dental.R;
+import com.example.dental.SaveSharedPreference;
 import com.example.dental.adapters.ClinicPromotionAdapter;
-import com.example.dental.adapters.HomeDiscountAdapter;
 import com.example.dental.models.ClinicModel;
+import com.example.dental.models.ServiceModel;
 import com.example.dental.presenters.ClinicPresenter;
 import com.example.dental.views.ClinicView;
 
@@ -23,51 +26,52 @@ public class ClinicPromotionFragment extends Fragment implements ClinicView {
     private RecyclerView clinicList;
     ClinicPromotionAdapter adapter;
     ClinicPresenter presenter;
+    ServiceModel model;
+
+    public void setModel(ServiceModel model) {
+        this.model = model;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_clinic_promotion_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_clinic_promotion_list, container, false);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 
-        clinicList = (RecyclerView) view.findViewById(R.id.clinicList);
+        clinicList = view.findViewById(R.id.clinicList);
         clinicList.setLayoutManager(layoutManager);
 
+        Intent intent = getActivity().getIntent();
+        model = (ServiceModel) intent.getSerializableExtra("serviceObj");
         presenter = new ClinicPresenter(this, getContext());
-        presenter.getMostDiscountClinics();
-
+        Toast.makeText(getContext(), model.getClinic().getId() + "", Toast.LENGTH_SHORT).show();
+        presenter.getServicesByClinicId(SaveSharedPreference.getUserName(getContext()), model.getClinic().getId());
         return view;
     }
 
     @Override
-    public void getAllClinic(List<ClinicModel> listResult) {
+    public void getAllClinics(List<ClinicModel> listResult) {
 
     }
 
     @Override
-    public void getMostLikedClinics(List<ClinicModel> listResult) {
+    public void getAllServices(List<ServiceModel> listResult) {
 
+    }
+
+    @Override
+    public void getServicesByClinicId(List<ServiceModel> listResult) {
+        System.out.println("HA: " + listResult);
+        Toast.makeText(getContext(), listResult.get(0).getName() + "", Toast.LENGTH_SHORT).show();
+        adapter = new ClinicPromotionAdapter(getContext(), (ArrayList<ServiceModel>) listResult);
+        clinicList.setAdapter(adapter);
     }
 
     @Override
     public void getMostDiscountClinics(List<ClinicModel> listResult) {
-        ArrayList<ClinicModel> tempList = new ArrayList<>();
-        for (ClinicModel item : listResult) {
-            ClinicModel clinic = new ClinicModel();
-            clinic.setId(item.getId());
-            clinic.setName(item.getName());
-            clinic.setDescription(item.getDescription());
-            clinic.setOldPrice(item.getOldPrice());
-            clinic.setPrice(item.getPrice());
-            if (item.getImage() != null) {
-                clinic.setImage(item.getImage());
-            }
-            tempList.add(clinic);
-        }
-        adapter = new ClinicPromotionAdapter(getContext(), tempList);
-        clinicList.setAdapter(adapter);
+
     }
 
     @Override
@@ -77,6 +81,11 @@ public class ClinicPromotionFragment extends Fragment implements ClinicView {
 
     @Override
     public void getClinicById(ClinicModel result) {
+
+    }
+
+    @Override
+    public void getClinicByIdNew(ClinicModel result) {
 
     }
 }

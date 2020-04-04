@@ -13,7 +13,6 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dental.R;
-import com.example.dental.activities.BookingDetailActivity;
 import com.example.dental.activities.BookingSummary;
 import com.example.dental.models.BookingTimeModel;
 
@@ -41,16 +40,27 @@ public class BookingTimeAdapter extends RecyclerView.Adapter<BookingTimeAdapter.
         holder.bookingTime.setText(bookingTimeModels.get(position).getTime());
         holder.bookingPrice.setText(bookingTimeModels.get(position).getPrice());
         int count = bookingTimeModels.get(position).getPeople();
+
         if (count == 0) {
-            holder.people.setTextColor(Color.GRAY);
+           holder.people.setTextColor(Color.RED);
         } else if (count < 4) {
-            holder.people.setTextColor(Color.parseColor("#68bb6c"));
+            holder.people.setTextColor(Color.parseColor("#593d41"));
         } else if (count < 8) {
-            holder.people.setTextColor(Color.parseColor("#cc7832"));
+            holder.people.setTextColor(Color.parseColor("#68bb6c"));
         } else if (count < 12) {
-            holder.people.setTextColor(Color.RED);
+
+            holder.people.setTextColor(Color.parseColor("#68bb6c"));
         }
-        holder.people.setText(bookingTimeModels.get(position).getPeople() + " đã hẹn");
+        if (count == 0) {
+            holder.people.setText("hết chỗ");
+            holder.bookingTimeContainer.setEnabled(false);
+            holder.bookingTimeContainer.setCardBackgroundColor(Color.LTGRAY);
+        } else {
+            holder.bookingTimeContainer.setEnabled(true);
+            holder.bookingTimeContainer.setCardBackgroundColor(Color.WHITE);
+            holder.people.setText("còn " + bookingTimeModels.get(position).getPeople() + " chỗ");
+        }
+
 
     }
 

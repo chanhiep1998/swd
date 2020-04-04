@@ -1,5 +1,6 @@
 package com.example.dental.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,10 +11,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dental.R;
+import com.example.dental.SaveSharedPreference;
+import com.example.dental.activities.MainActivity;
 import com.example.dental.adapters.HomeMostLikedAdapter;
-import com.example.dental.adapters.HomeNearbyAdapter;
-import com.example.dental.blocs.MostLikedBloc;
 import com.example.dental.models.ClinicModel;
+import com.example.dental.models.ServiceModel;
 import com.example.dental.presenters.ClinicPresenter;
 import com.example.dental.views.ClinicView;
 
@@ -24,6 +26,8 @@ public class HomeMostLikedFragment extends Fragment implements ClinicView {
     private RecyclerView clinicList;
     HomeMostLikedAdapter adapter;
     ClinicPresenter presenter;
+    MainActivity activity;
+    String token;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -36,33 +40,46 @@ public class HomeMostLikedFragment extends Fragment implements ClinicView {
         clinicList = (RecyclerView) view.findViewById(R.id.clinicList);
         clinicList.setLayoutManager(layoutManager);
 
+        activity = (MainActivity) getActivity();
+
+
+        token = SaveSharedPreference.getUserName(activity.getApplicationContext());
+        token =  activity.getToken();
+
         presenter = new ClinicPresenter(this, getContext());
-        presenter.getMostLikedClinics();
+        presenter.getAllServices(token);
         return view;
     }
 
     @Override
-    public void getAllClinic(List<ClinicModel> listResult) {
+    public void getAllClinics(List<ClinicModel> listResult) {
 
     }
 
     @Override
-    public void getMostLikedClinics(List<ClinicModel> listResult) {
-        ArrayList<ClinicModel> tempList = new ArrayList<>();
-        for (ClinicModel item : listResult) {
-            ClinicModel clinic = new ClinicModel();
-            clinic.setId(item.getId());
-            clinic.setName(item.getName());
-            clinic.setDescription(item.getDescription());
-            clinic.setOldPrice(item.getOldPrice());
-            clinic.setPrice(item.getPrice());
-            if (item.getImage() != null) {
-                clinic.setImage(item.getImage());
-            }
-            tempList.add(clinic);
+    public void getAllServices(List<ServiceModel> listResult) {
+        ArrayList<ServiceModel> tempList = new ArrayList<>();
+        for (ServiceModel item : listResult) {
+            ServiceModel service = new ServiceModel();
+            service.setId(item.getId());
+//            service.setServiceRating(item.getServiceRating());
+            service.setName(item.getName());
+            service.setDescription(item.getDescription());
+//            service.setOldPrice(item.getOldPrice());
+            service.setPrice(item.getPrice());
+            service.setClinic(item.getClinic());
+//            if (item.getImage() != null) {
+//                service.setImage(item.getImage());
+//            }
+            tempList.add(service);
         }
         adapter = new HomeMostLikedAdapter(getContext(), tempList);
         clinicList.setAdapter(adapter);
+    }
+
+    @Override
+    public void getServicesByClinicId(List<ServiceModel> listResult) {
+
     }
 
     @Override
@@ -77,6 +94,11 @@ public class HomeMostLikedFragment extends Fragment implements ClinicView {
 
     @Override
     public void getClinicById(ClinicModel result) {
+
+    }
+
+    @Override
+    public void getClinicByIdNew(ClinicModel result) {
 
     }
 }

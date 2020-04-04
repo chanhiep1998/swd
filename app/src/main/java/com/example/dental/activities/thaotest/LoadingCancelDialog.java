@@ -2,6 +2,7 @@ package com.example.dental.activities.thaotest;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 
@@ -30,8 +31,12 @@ public class LoadingCancelDialog {
         btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                activity.getCancelButton().setText("Đã Hủy");
+
                 alertDialog.dismiss();
+                activity.getCancelButton().setText("Đã Hủy");
+                activity.getCancelButton().setEnabled(false);
+                activity.getCancelImageView().animate().setDuration(2000).start();
+                activity.getCancelImageView().setVisibility(View.VISIBLE);
             }
         });
 

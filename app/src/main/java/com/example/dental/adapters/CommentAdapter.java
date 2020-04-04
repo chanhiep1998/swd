@@ -59,10 +59,10 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.Recycler
 
         public RecyclerViewHolder(View itemView) {
             super(itemView);
-            userName = (TextView) itemView.findViewById(R.id.userNameTextView);
-            userPosition = (TextView) itemView.findViewById(R.id.userAddressTextView);
-            comment = (TextView) itemView.findViewById(R.id.commentTextView);
-            commentTime = (TextView) itemView.findViewById(R.id.commentTimeTextView);
+            userName =  itemView.findViewById(R.id.userNameTextView);
+            userPosition =  itemView.findViewById(R.id.userAddressTextView);
+            comment =  itemView.findViewById(R.id.commentTextView);
+            commentTime =  itemView.findViewById(R.id.commentTimeTextView);
             serviceRating = (RatingBar) itemView.findViewById(R.id.serviceRateRatingBar);
             userImage = (ImageView) itemView.findViewById(R.id.userImageImageView);
 

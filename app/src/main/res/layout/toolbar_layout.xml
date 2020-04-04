@@ -41,6 +41,7 @@
             android:foregroundTint="@color/colorAccent"
             android:src="@drawable/ic_search_24px"
             android:layout_marginTop="10dp"
+            android:onClick="clickToSearch"
             app:srcCompat="@drawable/ic_search_24px" />
 
         <ImageView

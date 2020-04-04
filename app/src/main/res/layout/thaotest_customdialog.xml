@@ -53,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:fontFamily="@font/montserrat"
-        android:text="Nha khoa Lan An - 290/50 Đồng Khởi"
+        android:text="Nha khoa Lan Anh - 290/50 Đồng Khởi"
         android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

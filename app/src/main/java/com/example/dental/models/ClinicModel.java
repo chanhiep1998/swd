@@ -1,30 +1,45 @@
 package com.example.dental.models;
 
-import android.media.Image;
-
+import java.io.Serializable;
 import java.util.List;
 
-public class ClinicModel {
+public class ClinicModel implements Serializable {
     private int id;
     private String name;
     private int oldPrice;
     private int price;
     private String description;
+    private String phone;
+    private String address;
     private String image;
-    private List<String> services;
+    private List<ServiceModel> services;
+    private float latitude;
+    private float longtitude;
 
 
     public ClinicModel() {
     }
 
-    public ClinicModel(int id, String name, int oldPrice, int price, String description, String image, List<String> services) {
+    public ClinicModel(int id, String name, int oldPrice, int price, String description, String phone, String address, String image, List<ServiceModel> services, float latitude, float longtitude) {
         this.id = id;
         this.name = name;
         this.oldPrice = oldPrice;
         this.price = price;
         this.description = description;
+        this.phone = phone;
+        this.address = address;
         this.image = image;
         this.services = services;
+        this.latitude = latitude;
+        this.longtitude = longtitude;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public int getId() {
@@ -67,6 +82,14 @@ public class ClinicModel {
         this.description = description;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public String getImage() {
         return image;
     }
@@ -75,15 +98,31 @@ public class ClinicModel {
         this.image = image;
     }
 
-    public List<String> getServices() {
+    public List<ServiceModel> getServices() {
         return services;
     }
 
-    public void setServices(List<String> services) {
+    public void setServices(List<ServiceModel> services) {
         this.services = services;
     }
 
+    public float getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(float latitude) {
+        this.latitude = latitude;
+    }
+
+    public float getLongtitude() {
+        return longtitude;
+    }
+
+    public void setLongtitude(float longtitude) {
+        this.longtitude = longtitude;
+    }
+
     public int getDiscountPercent() {
-        return (int) ((double)(price - oldPrice)/(double)oldPrice * 100);
+        return (int) ((double) (price - oldPrice) / (double) oldPrice * 100);
     }
 }

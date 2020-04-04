@@ -1,5 +1,19 @@
 <resources>
-    <string name="app_name">Dental</string>
+    <string name="app_name">Dental Care</string>
+    <string name="dental_error_password">Password must contain at least 8 characters.</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -12,73 +26,35 @@ Khách hàng sử dụng mã giảm giá sai mục đích hoặc vi phạm các 
     </string>
 
     <string-array name="programming_languages">
-        <item>Đặt chỗ thành công</item>
-        <item>Đặt chỗ thành công</item>
-        <item>Đặt chỗ thành công</item>
-        <item>Đặt chỗ thành công</item>
-        <item>Đặt chỗ thành công</item>
-        <item>Đặt chỗ thành công</item>
-        <item>Đặt chỗ thành công</item>
-        <item>Đặt chỗ thành công</item>
-        <item>Đặt chỗ thành công</item>
-        <item>Đặt chỗ thành công</item>
-        <item>Đặt chỗ thành công</item>
-        <item>Đặt chỗ thành công</item>
-        <item>Đặt chỗ thành công</item>
-        <item>Đặt chỗ thành công</item>
-        <item>Đặt chỗ thành công</item>
-        <item>Đặt chỗ thành công</item>
-        <item>Đặt chỗ thành công</item>
-        <item>Đặt chỗ thành công</item>
-        <item>Đặt chỗ thành công</item>
-        <item>Đặt chỗ thành công</item>
+        <item>Trám răng tại Nha Khoa Lan Anh</item>
+
     </string-array>
 
     <string-array name="description">
-        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
-            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
-        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
-            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
-        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
-            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
-        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
-            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
-        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
-            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
-        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
-            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
-        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
-            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
-        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
-            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
-        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
-            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
-        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
-            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
-        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
-            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
-        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
-            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
-        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
-            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
-        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
-            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
-        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
-            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
-        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
-            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
-        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
-            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
-        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
-            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
-        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
-            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
-        <item>Đặt chỗ thành công với khuyến mãi "<b>"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
-            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"</item>
+        <item>"Dịch vụ: <b> Trám răng </b> <br />  " +
+                "Địa điểm: <b>Nha Khoa Lan An</b>" +
+                "Thời gian: <b>14:15, 20/02/2020</b> <br />" +
+                "Lời nhắc: Bạn có thể vệ sinh răng miệng ở nhà để cải thiện tốc độ dịch vụ"</item>
+
     </string-array>
 
 
     <string name="date_prompt">Chọn ngày</string>
+    <string name="service_description">Đặt chỗ thành công với khuyến mãi "<b><br />"Giấc trưa vui khám răng: miễn phí chụp và tư vấn."</b>"
+            "<b>"Giờ đặt: 14:15, 20/02/2020"</b>" tại "<b>"Nha Khoa Lan An"</b>"
+
+    </string>
+    <string name="clinic_description"><h2 style="text-align: justify;">Với quá trình hoạt động lâu dài trên 30 năm, <a href="https://nhakhoalananh.com/" rel="noopener" target="_blank">Nha khoa</a> Lan Anh luôn đặt lợi ích của khách hàng lên hàng đầu. <a href="https://nhakhoalananh.com/" rel="noopener" target="_blank">Nha khoa Lan Anh</a> được đầu tư trang thiết bị hiện đại, cùng độ ngũ y bác sĩ chuyên nghiệp, không ngừng học hỏi trau dồi kinh nghiệm nhằm đem lại kết quả điều trị tốt nhất cho mỗi khách hàng.</h2>
+<ol style="text-align: justify;">
+<li style="text-align: justify;">Nha khoa Lan Anh là nha khoa chuyên sâu về <a href="https://nhakhoalananh.com/tag/rang-su" rel="noopener" target="_blank">răng sứ</a> và <a href="https://nhakhoalananh.com/tag/implant" rel="noopener" target="_blank">implant</a>.</li>
+<li style="text-align: justify;">Đội ngũ Bác sĩ &amp; Quản lí chuyên nghiệp, tận tâm. Nha khoa Lan Anh là một <a href="https://nhakhoalananh.com/tag/nha-khoa-uy-tin-tphcm" rel="noopener" target="_blank">Nha khoa uy tín tphcm</a>.</li>
+<li style="text-align: justify;">Khám kỹ lưỡng, tư vấn rõ ràng, điều trị nhẹ nhàng, bảo hành thấu đáo.</li>
+<li style="text-align: justify;">Sử dụng trang thiết bị hiện đại, đồng bộ, đảm bảo vệ sinh vô trùng.</li>
+<li style="text-align: justify;">Ứng dụng công nghệ CAD/CAM, giúp làm răng sứ có độ chính xác và thẩm mỹ cao.</li>
+<li style="text-align: justify;">Ứng dụng công nghệ giả lập &amp; mô phỏng phục hình.</li>
+<li style="text-align: justify;">Có giấy chứng nhận và bảo hành chu đáo khi phục hình sứ và implant.</li>
+<li style="text-align: justify;">Nha khoa Lan Anh luôn vì lợi ích và sức khỏe lâu dài của khách hàng.</li>
+</ol></string>
     <string-array name="date_array">
         <item>Hôm nay (06/03/2020)</item>
         <item>Thứ 7 (07/03/2020)</item>

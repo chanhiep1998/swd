@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.dental.R;
 import com.example.dental.adapters.ClinicServicePackAdapter;
 import com.example.dental.models.ClinicModel;
+import com.example.dental.models.ClinicModel;
+import com.example.dental.models.ServiceModel;
 import com.example.dental.presenters.ClinicPresenter;
 import com.example.dental.views.ClinicView;
 
@@ -41,12 +43,17 @@ public class ClinicServicePackFragment extends Fragment implements ClinicView {
     }
 
     @Override
-    public void getAllClinic(List<ClinicModel> listResult) {
+    public void getAllClinics(List<ClinicModel> listResult) {
 
     }
 
     @Override
-    public void getMostLikedClinics(List<ClinicModel> listResult) {
+    public void getAllServices(List<ServiceModel> listResult) {
+
+    }
+
+    @Override
+    public void getServicesByClinicId(List<ServiceModel> listResult) {
 
     }
 
@@ -76,6 +83,11 @@ public class ClinicServicePackFragment extends Fragment implements ClinicView {
 
     @Override
     public void getClinicById(ClinicModel result) {
+
+    }
+
+    @Override
+    public void getClinicByIdNew(ClinicModel result) {
 
     }
 }

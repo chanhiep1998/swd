@@ -7,12 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.dental.activities.ClinicDetailActivity;
 import com.example.dental.R;
+import com.example.dental.activities.DetailedActivity;
+import com.example.dental.models.ClinicModel;
 import com.example.dental.models.ClinicModel;
 import com.squareup.picasso.Picasso;
 
@@ -41,6 +44,7 @@ public class HomeNearbyAdapter extends RecyclerView.Adapter<HomeNearbyAdapter.Re
     public void onBindViewHolder(@NonNull RecyclerViewHolder holder, int position) {
         holder.clinicId.setText(clinicList.get(position).getId() + "");
         holder.clinicName.setText(clinicList.get(position).getName());
+//        holder.clinicRating.setText(clinicList.get(position).getServiceRating() + "");
         holder.clinicOldPrice.setText(String.format("%,d", clinicList.get(position).getOldPrice()) + " đ");
         holder.clinicPrice.setText(String.format("%,d", clinicList.get(position).getPrice()) + " đ");
         holder.clinicDescription.setText(clinicList.get(position).getDescription());
@@ -59,29 +63,34 @@ public class HomeNearbyAdapter extends RecyclerView.Adapter<HomeNearbyAdapter.Re
         TextView clinicOldPrice;
         TextView clinicDiscount;
         TextView clinicDescription;
+        TextView clinicRating;
         TextView clinicId;
         ImageView clinicImage;
+        CardView clinicCardView;
 
         public RecyclerViewHolder(View itemView) {
             super(itemView);
-            clinicId = (TextView) itemView.findViewById(R.id.itemId);
-            clinicName = (TextView) itemView.findViewById(R.id.itemNameTextView);
-            clinicOldPrice = (TextView) itemView.findViewById(R.id.itemOldPriceTextView);
-            clinicPrice = (TextView) itemView.findViewById(R.id.itemPriceTextView);
-            clinicDiscount = (TextView) itemView.findViewById(R.id.itemDiscountTextView);
-            clinicDescription = (TextView) itemView.findViewById(R.id.itemDescriptionTextView);
-            clinicImage = (ImageView) itemView.findViewById(R.id.itemImage);
-            clinicName.setOnClickListener(new View.OnClickListener() {
+            clinicCardView = itemView.findViewById(R.id.clinicCardView);
+            clinicId = itemView.findViewById(R.id.itemId);
+            clinicName = itemView.findViewById(R.id.itemNameTextView);
+            clinicOldPrice = itemView.findViewById(R.id.itemOldPriceTextView);
+            clinicPrice = itemView.findViewById(R.id.itemPriceTextView);
+            clinicDiscount = itemView.findViewById(R.id.itemDiscountTextView);
+            clinicRating = itemView.findViewById(R.id.itemRating);
+            clinicDescription = itemView.findViewById(R.id.itemDescriptionTextView);
+            clinicImage = itemView.findViewById(R.id.itemImage);
+            clinicCardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(mContext, ClinicDetailActivity.class);
+                    Intent intent = new Intent(mContext, DetailedActivity.class);
+                    intent.putExtra("id", clinicId.getText());
+                    intent.putExtra("isClinic", "service");
+                    Toast.makeText(mContext, clinicId.getText().toString(), Toast.LENGTH_SHORT).show();
                     mContext.startActivity(intent);
                 }
             });
         }
     }
-
-
 
 
 }

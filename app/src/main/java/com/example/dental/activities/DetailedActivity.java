@@ -14,6 +14,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -23,9 +24,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.core.text.HtmlCompat;
 
 import com.example.dental.R;
+import com.example.dental.SaveSharedPreference;
+import com.example.dental.fragments.ClinicPromotionFragment;
 import com.example.dental.models.ClinicModel;
+import com.example.dental.models.ServiceModel;
+import com.example.dental.presenters.ClinicPresenter;
 import com.example.dental.views.ClinicView;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -34,16 +40,21 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.squareup.picasso.Picasso;
+import com.nineoldandroids.animation.ValueAnimator;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
 public class DetailedActivity extends AppCompatActivity implements ClinicView, OnMapReadyCallback {
-    TextView name, oldPrice, price, description, discount;
-
+    TextView name, clinicDescription, oldPrice, price, description, discount;
+    ClinicPresenter presenter;
     ImageView image;
+
+    ServiceModel model;
+
+    boolean toggle = false;
 
     private GoogleMap mMap;
 
@@ -95,11 +106,11 @@ public class DetailedActivity extends AppCompatActivity implements ClinicView, O
 //        Intent intent = getIntent();
 //        String clinicName = intent.getStringExtra("clinicId");
 //
-//         name = (TextView) findViewById(R.id.itemNameTextView);
-//         oldPrice = (TextView) findViewById(R.id.itemOldPriceTextView);
-//         price = (TextView) findViewById(R.id.itemPriceTextView);
-//         description = (TextView) findViewById(R.id.itemDescriptionTextView);
-//         discount = (TextView) findViewById(R.id.itemDiscountTextView);
+//         name =  findViewById(R.id.itemNameTextView);
+//         oldPrice =  findViewById(R.id.itemOldPriceTextView);
+//         price =  findViewById(R.id.itemPriceTextView);
+//         description =  findViewById(R.id.itemDescriptionTextView);
+//         discount =  findViewById(R.id.itemDiscountTextView);
 //         image = (ImageView) findViewById(R.id.itemImage);
 //
 //        name.setText(intent.getStringExtra("clinicName"));
@@ -108,22 +119,55 @@ public class DetailedActivity extends AppCompatActivity implements ClinicView, O
 //        description.setText(intent.getStringExtra("clinicDescription"));
 //        discount.setText(intent.getStringExtra("clinicDiscount"));
 
-        timeAndDistance = findViewById(R.id.timeAndDistanceTextView);
-
-        clinicAddress = findViewById(R.id.clinicAddressTextView);
 
         Intent intent = getIntent();
         String isClinic = intent.getStringExtra("isClinic");
+        String clinicId = intent.getStringExtra("id");
+        model = (ServiceModel) intent.getSerializableExtra("serviceObj");
+        presenter = new ClinicPresenter(this, this);
+        presenter.getServicesByClinicId(SaveSharedPreference.getUserName(this), model.getClinic().getId());
+
+        ClinicPromotionFragment fragment = (ClinicPromotionFragment) getSupportFragmentManager().findFragmentById(R.id.clinicFragmentPromotion);
+        fragment.setModel(model);
+
+        timeAndDistance = findViewById(R.id.timeAndDistanceTextView);
+        clinicAddress = findViewById(R.id.clinicAddressTextView);
+        name = findViewById(R.id.clinicNameTextView);
+        clinicDescription = findViewById(R.id.textClinicDescription);
+
+        clinicDescription.setText(HtmlCompat.fromHtml(getResources().getString(R.string.clinic_description), HtmlCompat.FROM_HTML_MODE_LEGACY));
+        name.setText(model.getClinic().getName());
+        clinicAddress.setText(model.getClinic().getAddress());
+        clinic = new LatLng(model.getClinic().getLatitude(), model.getClinic().getLongtitude());
+
 
         if (!isClinic.equalsIgnoreCase("clinic")) {
 
             Intent popIntent = new Intent(this, PopActivity.class);
-//        popIntent.putExtra("id", clinicName);
+            popIntent.putExtra("serviceObj", model);
             startActivity(popIntent);
 //        dialog = new Dialog(this);
 //        showPopup();
 
         }
+
+        final TextView showMore = findViewById(R.id.showAllTextView);
+        showMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (!toggle) {
+                    clickToShowMore(ViewGroup.LayoutParams.WRAP_CONTENT);
+                    toggle = !toggle;
+                    showMore.setText("Đóng");
+                } else {
+                    clickToShowMore(0);
+                    toggle = !toggle;
+                    showMore.setText("Xem toàn bộ thông tin");
+                }
+
+            }
+        });
     }
 
 
@@ -136,12 +180,22 @@ public class DetailedActivity extends AppCompatActivity implements ClinicView, O
 
 
     @Override
-    public void getAllClinic(List<ClinicModel> listResult) {
+    public void getAllClinics(List<ClinicModel> listResult) {
 
     }
 
     @Override
-    public void getMostLikedClinics(List<ClinicModel> listResult) {
+    public void getAllServices(List<ServiceModel> listResult) {
+
+    }
+
+    @Override
+    public void getServicesByClinicId(List<ServiceModel> listResult) {
+        ArrayList<ServiceModel> tempList = new ArrayList<>();
+        for (ServiceModel service : listResult) {
+            ServiceModel model = new ServiceModel();
+
+        }
 
     }
 
@@ -158,17 +212,21 @@ public class DetailedActivity extends AppCompatActivity implements ClinicView, O
     @Override
     public void getClinicById(ClinicModel result) {
 
-
         name.setText(result.getName());
-        description.setText(result.getDescription());
-        oldPrice.setText(String.format("%,d", result.getOldPrice()) + " đ");
-        price.setText(String.format("%,d", result.getPrice()) + " đ");
-        discount.setText(result.getDiscountPercent());
+//        description.setText(result.getDescription());
+//        oldPrice.setText(String.format("%,d", result.getOldPrice()) + " đ");
+//        price.setText(String.format("%,d", result.getPrice()) + " đ");
+//        discount.setText(result.getDiscountPercent());
+//
+//        if (result.getImage() != null) {
+//            Picasso.get().load(result.getImage()).into(image);
+//        }
 
-        if (result.getImage() != null) {
-            Picasso.get().load(result.getImage()).into(image);
-        }
 
+    }
+
+    @Override
+    public void getClinicByIdNew(ClinicModel result) {
 
     }
 
@@ -177,9 +235,8 @@ public class DetailedActivity extends AppCompatActivity implements ClinicView, O
 
         mMap = googleMap;
 
-        clinic = new LatLng(10.792085, 106.673578);
 
-        mMap.addMarker(new MarkerOptions().position(clinic).title("Nha Khoa Lan Anh").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))).showInfoWindow();
+        mMap.addMarker(new MarkerOptions().position(clinic).title(model.getClinic().getName()).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))).showInfoWindow();
 
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(clinic, 15));
 
@@ -233,7 +290,7 @@ public class DetailedActivity extends AppCompatActivity implements ClinicView, O
 
                     if (listAddresses != null && listAddresses.size() > 0) {
                         Log.i("PlaceInfo", listAddresses.get(0).toString());
-                        Toast.makeText(getApplicationContext(), listAddresses.get(0).getAddressLine(0), Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(getApplicationContext(), listAddresses.get(0).getAddressLine(0), Toast.LENGTH_SHORT).show();
                     }
 
                 } catch (IOException e) {
@@ -271,7 +328,7 @@ public class DetailedActivity extends AppCompatActivity implements ClinicView, O
 
     public void clickToDial(View view) {
         Intent intent = new Intent(Intent.ACTION_CALL);
-        intent.setData(Uri.parse("tel:0915223623"));
+        intent.setData(Uri.parse("tel:" + model.getClinic().getPhone().trim()));
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE)
                 != PackageManager.PERMISSION_GRANTED) {
             Toast.makeText(this, "NOT GRANTED", Toast.LENGTH_LONG).show();
@@ -285,6 +342,27 @@ public class DetailedActivity extends AppCompatActivity implements ClinicView, O
     public void clickToTravel(View view) {
         Intent intent = new Intent(getApplicationContext(), TravelActivity.class);
         startActivity(intent);
+    }
+
+    public void clickToSearchService(View view) {
+        Intent intent = new Intent(this, SearchServiceActivity.class);
+        intent.putExtra("clinicId", model.getClinic().getId() + "");
+        startActivity(intent);
+    }
+
+    public void clickToShowMore(int height) {
+        ValueAnimator anim = ValueAnimator.ofInt(clinicDescription.getMeasuredHeightAndState(),
+                height);
+        anim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator valueAnimator) {
+                int val = (Integer) valueAnimator.getAnimatedValue();
+                ViewGroup.LayoutParams layoutParams = clinicDescription.getLayoutParams();
+                layoutParams.height = val;
+                clinicDescription.setLayoutParams(layoutParams);
+            }
+        });
+        anim.start();
     }
 
 //    public void showPopup () {

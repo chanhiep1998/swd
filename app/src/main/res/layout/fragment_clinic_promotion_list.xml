@@ -22,8 +22,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Giảm giá"
-                android:textColor="#1c727f"
+                android:text="Dịch vụ"
+                android:textColor="@color/colorAccent"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 

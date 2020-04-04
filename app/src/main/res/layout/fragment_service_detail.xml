@@ -31,14 +31,14 @@
                     <ImageView
                         android:id="@+id/itemImage"
                         android:layout_width="match_parent"
-                        android:scaleType="centerCrop"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop" />
 
                     <RelativeLayout
                         android:id="@+id/closeRelativeLayout"
-                        android:layout_alignParentRight="true"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
                         android:layout_marginHorizontal="20dp"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/circle">
@@ -68,28 +68,29 @@
                     android:layout_marginRight="20dp"
                     android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp">
+                    <!--                    <LinearLayout-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_marginTop="10dp">-->
 
-                        <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:background="@drawable/redtag" />
+                    <!--                        <ImageView-->
+                    <!--                            android:layout_width="24dp"-->
+                    <!--                            android:layout_height="24dp"-->
+                    <!--                            android:background="@drawable/redtag" />-->
 
-                        <TextView
-                            android:id="@+id/itemDiscountTextView"
-                            style="@style/Discount.Dental.Text"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:text="-50%" />
-                    </LinearLayout>
+                    <!--                        <TextView-->
+                    <!--                            android:id="@+id/itemDiscountTextView"-->
+                    <!--                            style="@style/Discount.Dental.Text"-->
+                    <!--                            android:layout_width="match_parent"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            android:layout_marginLeft="5dp"-->
+                    <!--                            android:text="-50%" />-->
+                    <!--                    </LinearLayout>-->
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginVertical="5dp"
                         android:orientation="horizontal">
 
                         <LinearLayout
@@ -98,16 +99,38 @@
                             android:orientation="vertical">
 
                             <TextView
-                                android:id="@+id/itemDescriptionTextView"
-                                android:layout_width="230dp"
+                                android:id="@+id/itemNameTextView"
+                                android:layout_width="200dp"
                                 android:layout_height="wrap_content"
                                 android:text="Niềng răng 3D Clear Crystal"
                                 android:textColor="#000"
                                 android:textSize="24sp"
                                 android:textStyle="bold" />
 
+
+                            <!--                            <TextView-->
+                            <!--                                android:id="@+id/itemTechnologyTextView"-->
+                            <!--                                android:layout_width="230dp"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:alpha="0.8"-->
+                            <!--                                android:text="Công nghệ: Laser tech"-->
+                            <!--                                android:textColor="#000"-->
+                            <!--                                android:textSize="18sp"-->
+                            <!--                                android:textStyle="bold" />-->
+
+                            <!--                            <TextView-->
+                            <!--                                android:id="@+id/itemUnitTextView"-->
+                            <!--                                android:layout_width="230dp"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:layout_marginVertical="5dp"-->
+                            <!--                                android:alpha="0.9"-->
+                            <!--                                android:text="Đơn vị: 1 răng"-->
+                            <!--                                android:textColor="#000"-->
+                            <!--                                android:textSize="16sp"-->
+                            <!--                                android:textStyle="bold" />-->
+
                             <TextView
-                                android:id="@+id/itemNameTextView"
+                                android:id="@+id/itemDescriptionTextView"
                                 style="@style/ClinicNameSecondaryText.Dental.Text"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -119,10 +142,11 @@
                             android:layout_height="0dp"
                             android:layout_weight="1" />
 
+
                         <LinearLayout
 
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:orientation="vertical">
 
                             <TextView
@@ -130,61 +154,59 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="3.000.000 đ"
-                                android:textAlignment="textEnd"
                                 android:textColor="@color/textColorError"
-                                android:textSize="22sp"
+                                android:textSize="20sp"
                                 android:textStyle="bold" />
 
-                            <TextView
-                                android:id="@+id/itemOldPriceTextView"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="right"
-                                android:background="@drawable/line_strike"
-                                android:paddingHorizontal="1dp"
-                                android:text="6.000.000 đ"
-                                android:textAlignment="center"
-                                android:textSize="18sp" />
+                            <!--                            <TextView-->
+                            <!--                                android:id="@+id/itemOldPriceTextView"-->
+                            <!--                                android:layout_width="wrap_content"-->
+                            <!--                                android:layout_height="wrap_content"-->
+                            <!--                                android:layout_gravity="right"-->
+                            <!--                                android:background="@drawable/line_strike"-->
+                            <!--                                android:paddingHorizontal="1dp"-->
+                            <!--                                android:text="6.000.000 đ"-->
+                            <!--                                android:textSize="18sp" />-->
                         </LinearLayout>
 
                     </LinearLayout>
 
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginVertical="10dp"
-                        android:orientation="horizontal">
+                    <!--                    <LinearLayout-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_marginVertical="10dp"-->
+                    <!--                        android:orientation="horizontal">-->
 
-                        <TextView
-                            android:id="@+id/textView4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="4.2"
-                            android:textColor="#000"
-                            android:textSize="25sp"
-                            android:textStyle="bold" />
+                    <!--                        <TextView-->
+                    <!--                            android:id="@+id/textView4"-->
+                    <!--                            android:layout_width="wrap_content"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            android:text="4.2"-->
+                    <!--                            android:textColor="#000"-->
+                    <!--                            android:textSize="25sp"-->
+                    <!--                            android:textStyle="bold" />-->
 
-                        <androidx.appcompat.widget.AppCompatRatingBar
-                            style="@style/RatingBar"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginHorizontal="25dp"
-                            android:numStars="5"
-                            android:progressBackgroundTint="@color/grey"
-                            android:progressTint="#FCDB09"
-                            android:rating="4.5"
-                            android:scaleX="1.5"
-                            android:scaleY="1.5" />
+                    <!--                        <androidx.appcompat.widget.AppCompatRatingBar-->
+                    <!--                            style="@style/RatingBar"-->
+                    <!--                            android:layout_width="wrap_content"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            android:layout_gravity="center"-->
+                    <!--                            android:layout_marginHorizontal="25dp"-->
+                    <!--                            android:numStars="5"-->
+                    <!--                            android:progressBackgroundTint="@color/grey"-->
+                    <!--                            android:progressTint="#FCDB09"-->
+                    <!--                            android:rating="4.5"-->
+                    <!--                            android:scaleX="1.5"-->
+                    <!--                            android:scaleY="1.5" />-->
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="14 đánh giá"
-                            android:textSize="16sp" />
-                    </LinearLayout>
+                    <!--                        <TextView-->
+                    <!--                            android:layout_width="wrap_content"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            android:layout_gravity="center"-->
+                    <!--                            android:text="14 đánh giá"-->
+                    <!--                            android:textSize="16sp" />-->
+                    <!--                    </LinearLayout>-->
 
                     <!--                    <LinearLayout-->
 
@@ -306,9 +328,9 @@
                                 android:id="@+id/spinner1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:translationX="10dp"
                                 android:entries="@array/date_array"
-                                android:prompt="@string/date_prompt" />
+                                android:prompt="@string/date_prompt"
+                                android:translationX="10dp" />
                         </LinearLayout>
 
                         <fragment
@@ -328,6 +350,57 @@
                 <Space
                     android:layout_width="match_parent"
                     android:layout_height="10dp" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3dp"
+                            android:layout_marginTop="15dp"
+                            android:text="Mô tả dịch vụ"
+                            android:textSize="20sp" />
+
+
+                        <TextView
+                            android:id="@+id/textServiceDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:maxHeight="200dp"
+                            android:text="@string/service_description" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="15dp"
+                            android:background="#eeeeee" />
+
+                        <TextView
+                            android:id="@+id/showMoreServiceDesTextView"
+                            style="@style/VerifiedText.Dental.Text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Xem thêm"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorAccent" />
+
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
                 <Space
                     android:layout_width="match_parent"

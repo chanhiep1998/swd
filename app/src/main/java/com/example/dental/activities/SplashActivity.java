@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.dental.R;
+import com.example.dental.SaveSharedPreference;
 
 public class SplashActivity extends AppCompatActivity {
     Thread thread;

@@ -1,11 +1,11 @@
 package com.example.dental.activities;
 
+import android.os.Bundle;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Bundle;
 
 import com.example.dental.R;
 import com.example.dental.adapters.BookingAdapter;
@@ -25,8 +25,12 @@ public class BookingActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.booking_layout);
-        String des = "Đặt chỗ thành công với khuyến mãi <b>Giấc trưa vui khám răng: miễn phí chụp và tư vấn.</b> " +
-                "Giờ đặt: <b>14:15, 20/02/2020</b> tại <b>Nha Khoa Lan An</b>";
+        String des = "Dịch vụ: <b> Trám răng </b> <br/>  " +
+                "Địa điểm: <b>Nha Khoa Lan An</b>" +
+                "Thời gian: <b>14:15, 20/02/2020</b> <br/>" +
+                "Lời nhắc: Bạn có thể vệ sinh răng miệng ở nhà để cải thiện tốc độ dịch vụ";
+
+
         int i = 0;
         while (i < 20) {
             s2[i] = des;
